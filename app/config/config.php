@@ -13,7 +13,7 @@ $baseurl = url();
 if ($baseurl == 'http://localhost') {
     $baseurl = "http://localhost/cc_admin";
 }
-define('base_url', "http://fashion-design.test");
+define('base_url', $baseurl);
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
