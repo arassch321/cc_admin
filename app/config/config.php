@@ -1,12 +1,17 @@
 <?php
 function url()
 {
-    if (isset($_SERVER['HTTPS'])) {
-        $protocol = ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != "off") ? "https" : "http";
+    if (
+        isset($_SERVER['HTTPS']) &&
+        ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
+        isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+        $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https'
+    ) {
+        $protocol = 'https://';
     } else {
-        $protocol = 'http';
+        $protocol = 'http://';
     }
-    return $protocol . "://" . $_SERVER['HTTP_HOST'];
+    return $protocol  . $_SERVER['HTTP_HOST'];
 }
 
 $baseurl = url();
