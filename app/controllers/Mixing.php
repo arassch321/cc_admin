@@ -17,7 +17,7 @@ class Mixing extends Controller
         $data['css'] =
             array("sidebar", "paduan-pakaian");
         $data['script'] =
-            array("paduan-pakaian");
+            array('data', 'scriptMix', 'mixing', "paduan-pakaian");
         // $data['kategori'] = $this->model('KategoriModel')->getAllKategori();
         $this->view('templates/header', $data);
         $this->view('templates/sidebar', $data);

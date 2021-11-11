@@ -20,7 +20,16 @@ if ($baseurl == 'http://localhost') {
 }
 define('base_url', $baseurl);
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'db_fashiondesign');
+
+if ($baseurl == 'http://localhost/cc_admin' || $baseurl == 'http://fashion-design.test') {
+    define('DB_HOST', 'localhost');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+    define('DB_NAME', 'db_fashiondesign');
+} else {
+
+    define('DB_HOST', 'sql212.epizy.com');
+    define('DB_USER', 'epiz_29789040');
+    define('DB_PASS', 'Xh6GsMluLAVY');
+    define('DB_NAME', 'epiz_29789040_XXX');
+}

@@ -2,17 +2,18 @@
     <div class="container">
         <section class="customize">
             <h1>Customize Your Outfit</h1>
+
             <div class="picker" id="cloth">
                 <button class="previous-btn" id="pick_cloth"><i class="fas fa-chevron-left"></i></button>
 
                 <div class="wrapperimg" id="pick_cloth_img">
                     <div class="images-area">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Baju.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Baju.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Baju.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Baju.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Baju.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Baju.png" alt="image" class="firstImage">
+                        <!-- <img src="/dist/img/Pemilihan%20Baju.png" alt="image" class="firstImage">
+                        <img src="/dist/img/Pemilihan%20Baju.png" alt="image">
+                        <img src="/dist/img/Pemilihan%20Baju.png" alt="image">
+                        <img src="/dist/img/Pemilihan%20Baju.png" alt="image">
+                        <img src="/dist/img/Pemilihan%20Baju.png" alt="image">
+                        <img src="/dist/img/Pemilihan%20Baju.png" alt="image"> -->
                     </div>
                     <!-- Buttons Area -->
                     <!-- Pagination Area -->
@@ -27,12 +28,12 @@
 
                 <div class="wrapperimg" id="pick_pants_img">
                     <div class="images-area">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage">
+                        <!-- <img src="/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage"> -->
+                        <!-- <img src="/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage"> -->
+                        <!-- <img src="/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage"> -->
+                        <!-- <img src="/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage"> -->
+                        <!-- <img src="/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage"> -->
+                        <!-- <img src="/dist/img/Pemilihan%20Celana.png" alt="image" class="firstImage"> -->
                     </div>
                     <!-- Buttons Area -->
                     <!-- Pagination Area -->
@@ -47,12 +48,12 @@
 
                 <div class="wrapperimg" id="pick_shoes_img">
                     <div class="images-area">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage">
-                        <img src="<?= base_url; ?>/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage">
+                        <!-- <img src="/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage"> -->
+                        <!-- <img src="/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage"> -->
+                        <!-- <img src="/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage"> -->
+                        <!-- <img src="/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage"> -->
+                        <!-- <img src="/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage"> -->
+                        <!-- <img src="/dist/img/Pemilihan%20Sepatu.png" alt="image" class="firstImage"> -->
                     </div>
                     <!-- Buttons Area -->
                     <!-- Pagination Area -->
