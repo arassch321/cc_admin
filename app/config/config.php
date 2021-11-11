@@ -28,8 +28,8 @@ if ($baseurl == 'http://localhost/cc_admin' || $baseurl == 'http://fashion-desig
     define('DB_NAME', 'db_fashiondesign');
 } else {
 
-    define('DB_HOST', 'sql212.epizy.com');
-    define('DB_USER', 'epiz_29789040');
-    define('DB_PASS', 'Xh6GsMluLAVY');
-    define('DB_NAME', 'epiz_29789040_XXX');
+    define('DB_HOST', 'botkgkqmgyoiovycsvln-mysql.services.clever-cloud.com');
+    define('DB_USER', 'uj1qnl4rlq8uzsk2');
+    define('DB_PASS', 'k8BXQj9UHy2OnC8B4GKy');
+    define('DB_NAME', 'botkgkqmgyoiovycsvln');
 }
