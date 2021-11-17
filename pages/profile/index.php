@@ -13,9 +13,9 @@ if (isset($_POST["update_record"])) {
     $username = $_POST['username'];
     $gender = $_POST['gender'];
 
-    $query = "UPDATE user set nama=:nama, username=:username, gender=:gender WHERE username=:usname";
+    $query = "UPDATE user set nama=:nama, username=:username, gender=:gender WHERE id_user=:usname";
     $DB->query($query);
-    $DB->bind('usname', $_SESSION['uname']);
+    $DB->bind('usname', $_SESSION['id_user']);
     $DB->bind('nama', $nama);
     $DB->bind('username', $username);
     $DB->bind('gender', $gender);
@@ -83,7 +83,7 @@ if (isset($_POST["update_record"])) {
     <main>
         
                 <div class="profile-container">
-                    <form>
+                    <form method="POST">
                         <h3>Nama</h3>
                         <input class="input-textbox" type="text" name="nama" placeholder="Name"><br>
                         <h3>Username</h3>
@@ -94,8 +94,11 @@ if (isset($_POST["update_record"])) {
                         <br>
                         <div class="btn-container">
                         <input class="btn-update" type="submit" name="update_record" value="Update">
-                        </div>    
+                        </div>   
+                        <a href="../change-password/">Change Password</a> 
                     </form>
+                    <br>
+                    <br>
                 </div>
 
     </main>
