@@ -76,30 +76,22 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link <?php if ($data['page'] == 'dashboard') {
-                                                    echo 'active';
-                                                  } ?>">
+                      <a href="<?= base_url; ?>/admin/item/celana/" class="nav-link  <?php if (in_array("celana", $data['page'])) {
+                                                                                        echo 'active';
+                                                                                      } ?>">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Celana</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="<?= base_url; ?>/admin/item/sepatu/" class="nav-link  <?php if (in_array("sepatu", $data['page'])) {
+                                                                                        echo 'active';
+                                                                                      } ?>">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Sepatu</p>
                       </a>
                     </li>
                   </ul>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url; ?>/admin/item" class="nav-link <?php if ($data['page'] == 'item') {
-                                                                          echo 'active';
-                                                                        } ?>">
-                    <i class="nav-icon fas ion-ios-pricetags-outline"></i>
-                    <p>
-                      Item
-                    </p>
-                  </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= base_url; ?>/admin/user" class="nav-link <?php if ($data['page'] == 'user') {
