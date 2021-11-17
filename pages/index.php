@@ -51,7 +51,7 @@ if (isset($_POST['but_logout'])) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="./about.html" class="nav-link">
+                    <a href="./about.php" class="nav-link">
                         <span data-hover="Innovations" class="navi-text">
                             About Us
                         </span>

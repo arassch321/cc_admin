@@ -43,7 +43,7 @@ require_once "$root/app/config/config.php";
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../about.html" class="nav-link">
+                    <a href="../about.php" class="nav-link">
                         <span data-hover="Innovations" class="navi-text">
                             About Us
                         </span>

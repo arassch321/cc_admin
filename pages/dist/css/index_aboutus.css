@@ -115,6 +115,11 @@ main {
   align-items: center;
   justify-content: center;
 }
+.btn.logout {
+  width: 100%;
+  border:none;
+  font-size: inherit;
+ }
 
 a {
   text-decoration: none;

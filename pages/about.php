@@ -1,3 +1,21 @@
+<?php
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+if (strpos($root, 'htdocs') !== false) {
+    $root = $root . '\cc_admin';
+}
+require_once "$root/app/config/config.php";
+
+if (isset($_POST['but_logout'])) {
+    ob_start();
+    session_destroy();
+    echo "
+  <script>
+    localStorage.clear();
+  </script>";
+    ob_end_flush();
+    header("refresh:0.1;url=index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,46 +36,62 @@
 
 <body>
     <header>
-        <nav class="nav container">
+    <nav class="nav container">
             <div class="logo">
                 <img src="./dist/img/logo.png" width="90">
                 <p>Fashion Design</p>
             </div>
             <ul class="menu-container">
                 <li class="nav-item">
-                    <a href="./" class="nav-link">
+                    <a href="#" class="nav-link">
                         <span data-hover="Home" class="navi-text">
                             Home
                         </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link active-nav">
+                    <a href="./about.php" class="nav-link">
                         <span data-hover="Innovations" class="navi-text">
                             About Us
                         </span>
                     </a>
                 </li>
-                <li class="nav-item" id="dropdown">
-                    <a class="nav-link" href="./login/">
-                        <span data-hover="Innovations" class="navi-text">
-                            Login
-                        </span>
-
-
-                    </a>
-
-                </li>
-                <li class="nav-item" id="dropdown">
-                    <a class="nav-link btn" href="./register/">
-                        <span data-hover="Innovations" class="navi-text">
-                            Sign up
-                        </span>
-
-
-                    </a>
-
-                </li>
+                <?php
+                if (!isset($_SESSION['uname'])) {
+                ?>
+                    <li class="nav-item">
+                        <a href="./login/" class="nav-link btn">
+                            <span data-hover="Innovations" class="navi-text">
+                                Login
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link nav-signup btn" style="border-radius:40px;" href="./register/">
+                            <span data-hover="Innovations" class="navi-text">
+                                Sign Up
+                            </span>
+                        </a>
+                    </li>
+                <?php
+                } else {
+                ?>
+                    <li class="nav-item" id="dropdown">
+                        <a class="nav-link btn">
+                            <span data-hover="Innovations" class="navi-text">
+                                My Account
+                            </span>
+                        </a>
+                        <div class="dropdown-child">
+                            <a href="./profile" class="btn">Profiles</a>
+                            <form method='post' action="">
+                                <input class="btn logout" type="submit" value="Logout" name="but_logout">
+                            </form>
+                        </div>
+                    </li>
+                <?php
+                }
+                ?>
             </ul>
             <div class="menu_burger">
                 <span class="bar"></span>

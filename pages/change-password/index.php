@@ -25,6 +25,16 @@ if (count($_POST) > 0) {
     } else
         $message = "Current Password is not correct";
 }
+if (isset($_POST['but_logout'])) {
+    ob_start();
+    session_destroy();
+    echo "
+  <script>
+    localStorage.clear();
+  </script>";
+    ob_end_flush();
+    header("refresh:0.1;url=../index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +98,7 @@ if (count($_POST) > 0) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../about.html" class="nav-link">
+                    <a href="../about.php" class="nav-link">
                         <span data-hover="Innovations" class="navi-text">
                             About Us
                         </span>
@@ -102,7 +112,10 @@ if (count($_POST) > 0) {
                     </a>
                     <div class="dropdown-child">
                         <a href=# class="btn">Profiles</a>
-                        <a href="#" class="btn">Sign Out</a>
+                        <a href="./profile" class="btn">Profiles</a>
+                            <form method='post' action="">
+                                <input class="btn logout" type="submit" value="Logout" name="but_logout">
+                            </form>
                     </div>
                 </li>
             </ul>

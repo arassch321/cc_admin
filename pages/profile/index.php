@@ -21,6 +21,16 @@ if (isset($_POST["update_record"])) {
     $DB->bind('gender', $gender);
     $DB->execute();
 }
+if (isset($_POST['but_logout'])) {
+    ob_start();
+    session_destroy();
+    echo "
+  <script>
+    localStorage.clear();
+  </script>";
+    ob_end_flush();
+    header("refresh:0.1;url=../index.php");
+}
 
 ?>
 
@@ -36,6 +46,7 @@ if (isset($_POST["update_record"])) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy:400">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500">
     <link rel="stylesheet" href="./assets/css/profile.css">
+    <link rel="stylesheet" href="./assets/css/side-bar.css">
     <title>Profile</title>
 </head>
 
@@ -55,7 +66,7 @@ if (isset($_POST["update_record"])) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../about.html" class="nav-link">
+                    <a href="../about.php" class="nav-link">
                         <span data-hover="Innovations" class="navi-text">
                             About Us
                         </span>
@@ -68,8 +79,11 @@ if (isset($_POST["update_record"])) {
                         </span>
                     </a>
                     <div class="dropdown-child">
-                        <a href=# class="btn">Profiles</a>
-                        <a href="#" class="btn">Sign Out</a>
+                            <a href="./profile" class="btn">Profiles</a>
+                            <form method='post' action="">
+                                <input class="btn logout" type="submit" value="Logout" name="but_logout">
+                            </form>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -95,7 +109,8 @@ if (isset($_POST["update_record"])) {
                         <div class="btn-container">
                         <input class="btn-update" type="submit" name="update_record" value="Update">
                         </div>   
-                        <a href="../change-password/">Change Password</a> 
+                        <p><span class="sepasi">...</span></p>
+                        <center><a href="../change-password/" class="signup">Change Password</a></center>
                     </form>
                     <br>
                     <br>

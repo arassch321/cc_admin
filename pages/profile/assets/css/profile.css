@@ -62,6 +62,12 @@ main {
   justify-content: center;
 }
 
+.btn.logout {
+ width: 100%;
+ border:none;
+ font-size: inherit;
+}
+
 a {
   text-decoration: none;
   color: var(--black);
@@ -174,6 +180,19 @@ nav ul li {
 .menu_burger {
   display: none;
   cursor: pointer;
+}
+
+.sepasi {
+  color: whitesmoke;
+}
+.signup{
+  font-family: Roboto;
+  font-size: 16px;
+  color: black;
+  padding-top: 10px;
+  margin-top: 70px;
+  text-align: center;
+  text-decoration: underline;
 }
 
 .bar {
