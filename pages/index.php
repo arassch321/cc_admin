@@ -84,7 +84,7 @@ if (isset($_POST['but_logout'])) {
                             </span>
                         </a>
                         <div class="dropdown-child">
-                            <a href=# class="btn">Profiles</a>
+                            <a href="./profile" class="btn">Profiles</a>
                             <form method='post' action="">
                                 <input class="btn logout" type="submit" value="Logout" name="but_logout">
                             </form>

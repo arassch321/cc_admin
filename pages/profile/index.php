@@ -48,14 +48,14 @@ if (isset($_POST["update_record"])) {
             </div>
             <ul class="menu-container">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?= base_url ?>" class="nav-link">
                         <span data-hover="Home" class="navi-text">
                             Home
                         </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">
+                    <a href="../about.html" class="nav-link">
                         <span data-hover="Innovations" class="navi-text">
                             About Us
                         </span>
@@ -81,13 +81,13 @@ if (isset($_POST["update_record"])) {
         </nav>
     </header>
     <main>
-
+        
                 <div class="profile-container">
                     <form>
                         <h3>Nama</h3>
                         <input class="input-textbox" type="text" name="nama" placeholder="Name"><br>
                         <h3>Username</h3>
-                        <input class="input-textbox" type="email" name="email" placeholder="Username"><br>
+                        <input class="input-textbox" type="text" name="username" placeholder="Username"><br>
                         <h3>Gender</h3>
                         <input type="radio" name="gender" placeholder="Gender" value="l">Laki-laki
                         <input type="radio" name="gender" placeholder="Gender" value="p">Perempuan
