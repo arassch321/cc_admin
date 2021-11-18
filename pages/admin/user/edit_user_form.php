@@ -173,7 +173,7 @@ $result = $DB->resultSet();
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col-md-12"><label class="labels">ID User</label><input type="text"
-                                                class="form-control " placeholder="ID User" value="<?php echo $result[0]['id_user']; ?>" name="nama" id="nama" name="id"
+                                                class="form-control " placeholder="ID User" value="<?php echo $result[0]['id_user']; ?>" id="nama" name="id_user"
                                                 maxlength="10" readonly>
                                         </div>
                                     </div>
@@ -200,12 +200,12 @@ $result = $DB->resultSet();
                                     <div class="row mt-3"><div class="col-md-12"><label class="labels">Gender</label><select
                                                 class="form-control" id="gender" name="gender">
                                                 <option value="">Masukkan Gender Anda</option>
-                                                <option <?php if($result[0]['gender'] = 1){
+                                                <option <?php if($result[0]['gender'] == 1){
                                                     echo 'selected';
-                                                } ?> value="1">Male</option>
-                                                <option <?php if($result[0]['gender'] = 2){
+                                                } ?> value="1">Laki-laki</option>
+                                                <option <?php if($result[0]['gender'] == 2){
                                                     echo 'selected';
-                                                } ?> value="2">Female</option>
+                                                } ?> value="2">Perempuan</option>
                                             </select>
                                             </div>
                                     </div>
