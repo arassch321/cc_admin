@@ -36,14 +36,14 @@ if (isset($_POST['but_logout'])) {
 
 <body>
     <header>
-    <nav class="nav container">
+        <nav class="nav container">
             <div class="logo">
                 <img src="./dist/img/logo.png" width="90">
                 <p>Fashion Design</p>
             </div>
             <ul class="menu-container">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?= base_url ?>" class="nav-link">
                         <span data-hover="Home" class="navi-text">
                             Home
                         </span>
@@ -109,12 +109,8 @@ if (isset($_POST['but_logout'])) {
             <h1>
                 ABOUT US
             </h1>
-            </p> Ini adalah <span style="color:rgb(231, 250, 121);">website</span> desain <span
-                style="color:rgb(173, 173, 173);">fashion</span> untuk <span
-                style="color:rgb(230, 140, 140);">inspirasi</span><br>
-            <span style="color:rgb(170, 170, 175);">fashion</span> anda ketika anda <span
-                style="color:rgb(197, 74, 90);">mencari ide</span> ataupun <br>inspirasi <span
-                style="color:rgb(190, 188, 188);">fashion</span></p>
+            </p> Ini adalah <span style="color:rgb(231, 250, 121);">website</span> desain <span style="color:rgb(173, 173, 173);">fashion</span> untuk <span style="color:rgb(230, 140, 140);">inspirasi</span><br>
+            <span style="color:rgb(170, 170, 175);">fashion</span> anda ketika anda <span style="color:rgb(197, 74, 90);">mencari ide</span> ataupun <br>inspirasi <span style="color:rgb(190, 188, 188);">fashion</span></p>
         </div>
 
     </main>
