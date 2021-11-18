@@ -1,5 +1,13 @@
 <?php
-require_once("koneksi.php");
+
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+if (strpos($root, 'htdocs') !== false) {
+	$root = $root . '\cc_admin';
+}
+require_once "$root/app/config/config.php";
+require_once "$root/app/config/Database.php";
+
+$DB = new Database();
 ?>
 
 <!DOCTYPE html>
@@ -14,14 +22,14 @@ require_once("koneksi.php");
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url; ?>/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <!-- Tempusdominus Bootstrap 4 -->
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url; ?>/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?= base_url; ?>/dist/css/adminlte.min.css">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
@@ -74,7 +82,7 @@ require_once("koneksi.php");
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="<?= base_url; ?>/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Admin</span>
             </a>
 
@@ -83,7 +91,7 @@ require_once("koneksi.php");
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="<?= base_url; ?>/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Alexander Pierce</a>
@@ -169,9 +177,10 @@ require_once("koneksi.php");
                     </div>
                     <!-- /.card-header -->
                 <?php
-                $stmt = $pdo_conn->prepare("SELECT * FROM user ORDER BY id_user ASC");
-                $stmt->execute();
-                $result = $stmt->fetchAll();
+                $sql = "SELECT * FROM user ORDER BY id_user ASC";
+                $DB->query($sql);
+                $DB->execute();
+                $result = $DB->resultSet();
                 ?>
                     <div class="card-body">
                         <table id="example2" class="table table-bordered table-striped">
@@ -204,15 +213,22 @@ require_once("koneksi.php");
                                     <?php echo $row["password"]; ?>
                                     </td>
                                     <td>
-                                    <?php echo $row["gender"]; ?>
+                                    <?php   if($row['gender'] == 1){
+                                                echo 'Laki-laki';
+                                            }
+                                            elseif($row['gender'] == 2){
+                                                echo 'Perempuan';
+                                            }
+                                            else{
+                                                echo 'Tidak ada Data';
+                                            } ?>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-info ion-edit" data-toggle="modal" data-target="#edit2">
-                                        <a  href="edit_user_form.php?id_user=<?php echo $row['id_user'] ?>">
-                                            Edit</a></button>
-                                        <button type="button" class="btn btn-warning ion-android-delete" data-toggle="modal" data-target="#delete2">
-                                            <a href='delete.php?id_user=<?php echo $row['id_user'] ?>'>Hapus</a>
-                                        </button>
+                                        
+                                        <a type="button" class="btn btn-primary ion-edit"  href="edit_user_form.php?id_user=<?php echo $row['id_user'] ?>">
+                                            Edit</a>
+                                        <a type="button" class="btn btn-warning ion-android-delete" href='delete.php?id_user=<?php echo $row['id_user'] ?>'>Hapus</a>
+                                        
                                     </td>
                                 </tr>
                                     <?php
@@ -245,26 +261,26 @@ require_once("koneksi.php");
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-    <script src="./dist/js/adminlte.js"></script>
+    <script src="<?= base_url; ?>/dist/js/adminlte.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- jQuery -->
 
     <!-- jQuery UI 1.11.4 -->
-    <script src="./plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 
     <script>
         $.widget.bridge("uibutton", $.ui.button);
     </script>
     <!-- Bootstrap 4 -->
-    <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <script src="./plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="./plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="./plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="./plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
     <script>
         $(function() {
             $('#example2').DataTable({

@@ -1,3 +1,12 @@
+<?php
+require_once("koneksi.php");
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+if (strpos($root, 'htdocs') !== false) {
+  $root = $root . '\cc_admin';
+}
+require_once "$root/app/config/config.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,27 +19,22 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url; ?>/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <!-- Tempusdominus Bootstrap 4 -->
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url; ?>/plugins/fontawesome-free/css/all.min.css">
     <!-- DataTables -->
-    <link rel="stylesheet" href="./plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="./plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="./plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url; ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url; ?>/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url; ?>/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?= base_url; ?>/dist/css/adminlte.min.css">
     <!-- Scripts -->
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-
-
-
-
-
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -61,7 +65,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="./dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                <img src="<?= base_url; ?>/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                     style="opacity: 0.8" />
                 <span class="brand-text font-weight-light">FashionDesignApp</span>
             </a>
@@ -71,7 +75,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="<?= base_url; ?>/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Alexander Pierce</a>
@@ -133,13 +137,13 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 style="font-size: 2.5rem!important;">Edit User</h1>
+                            <h1 style="font-size: 2.5rem!important;">Tambah User</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb mt-3 float-sm-right">
                                 <li class="breadcrumb-item"><a href="./admin.html">Home</a></li>
                                 <li class="breadcrumb-item"><a href="./item.html">User</a></li>
-                                <li class="breadcrumb-item active">Edit</li>
+                                <li class="breadcrumb-item active">Tambah</li>
                             </ol>
                         </div>
                     </div>
@@ -154,12 +158,6 @@
                             <div class="form-group">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <h4 class="text-right">Details</h4>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-md-12"><label class="labels">ID User</label><input type="text"
-                                                class="form-control " placeholder="ID User" value="" name="id"
-                                                maxlength="10" readonly>
-                                        </div>
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col-md-12">
@@ -221,23 +219,23 @@
     <!-- jQuery -->
 
     <!-- jQuery UI 1.11.4 -->
-    <script src="./plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 
     <script>
         $.widget.bridge("uibutton", $.ui.button);
     </script>
     <!-- Bootstrap 4 -->
-    <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="./dist/js/adminlte.js"></script>
+    <script src="<?= base_url; ?>/dist/js/adminlte.js"></script>
 
 
 
-    <script src="./plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="./plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="./plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="./plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?= base_url; ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
     <script>
         $(function () {
             $('#example1').DataTable({

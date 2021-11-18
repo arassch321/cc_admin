@@ -22,7 +22,7 @@ if ($baseurl == 'http://localhost') {
 define('base_url', $baseurl);
 
 
-if ($baseurl == 'http://localhost/cc_admin' || $baseurl == 'http://fashion-design.test') {
+if ($baseurl == 'http://localhost/cc_admin' || $baseurl == 'http://fashion-design.test' || $baseurl == 'http://cc_admin.test') {
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
