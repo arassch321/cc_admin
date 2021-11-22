@@ -12,6 +12,26 @@ $sql = "SELECT * FROM user WHERE id_user='".$_GET["id_user"]."'";
 $DB->query($sql);
 $DB->execute();
 $result = $DB->resultSet();
+
+if (!isset($_SESSION['uname'])) {
+    header('Location: ' . base_url . '/login/');
+  }
+  if (isset($_SESSION['level'])) {
+    if ($_SESSION['level'] == 2) {
+      header('Location: ' . base_url);
+    }
+  }
+  
+  if (isset($_POST['but_logout'])) {
+    ob_start();
+    session_destroy();
+    echo "
+    <script>
+      localStorage.clear();
+    </script>";
+    ob_end_flush();
+    header("refresh:0.1;url=" . base_url);
+  }
 ?>
 
 <!DOCTYPE html>
@@ -74,72 +94,114 @@ $result = $DB->resultSet();
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                <img src="<?= base_url; ?>/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                    style="opacity: 0.8" />
-                <span class="brand-text font-weight-light">FashionDesignApp</span>
-            </a>
+         <!-- Main Sidebar Container -->
+         <aside class="main-sidebar sidebar-dark-primary elevation-4">
+          <!-- Brand Logo -->
+          <a href="index3.html" class="brand-link">
+            <img src="<?= base_url; ?>/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8" />
+            <span class="brand-text font-weight-light">FashionDesignApp</span>
+          </a>
 
-            <!-- Sidebar -->
-            <div class="sidebar d-flex flex-column">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="<?= base_url; ?>/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
-                    </div>
-                </div>
-
-                <!-- Sidebar Menu -->
-                <nav class="mt-2 navibar d-flex flex-grow-1 flex-column">
-                    <ul class="nav nav-pills nav-sidebar flex-column h-100" data-widget="treeview" role="menu"
-                        data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                                   with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="./admin.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Dashboard
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./item.html" class="nav-link">
-                                <i class="nav-icon fas ion-ios-pricetags-outline"></i>
-                                <p>
-                                    Item
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="user.html" class="nav-link active">
-                                <i class="nav-icon fas ion-person-stalker"></i>
-                                <p>
-                                    User
-                                </p>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <ul class="nav nav-pills nav-sidebar flex-column flex-end mb-2">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link ">
-                                <i class="nav-icon fas ion-log-out"></i>
-                                <p>
-                                    Logout
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
+          <!-- Sidebar -->
+          <div class="sidebar d-flex flex-column">
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+              <div class="image">
+                <img src="<?= base_url; ?>/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+              </div>
+              <div class="info">
+                <a href="#" class="d-block"><?= $_SESSION['uname'] ?></a>
+              </div>
             </div>
-            <!-- /.sidebar -->
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2 navibar d-flex flex-grow-1 flex-column">
+              <ul class="nav nav-pills nav-sidebar flex-column h-100" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                                   with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                  <a href="<?= base_url; ?>/admin" class="nav-link <?php if ($data['page'] == 'dashboard') {
+                                                                      echo 'active';
+                                                                    } ?>">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                      Dashboard
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item <?php if (in_array("item", $data['page'])) {
+                                      echo 'menu-open';
+                                    } ?>">
+                  <a href="#" class="nav-link <?php if (in_array("item", $data['page'])) {
+                                                echo 'active';
+                                              } ?>">
+                    <i class="nav-icon fas ion-ios-pricetags-outline"></i>
+                    <p>
+                      Pakaian
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="<?= base_url; ?>/admin/item/baju/" class="nav-link <?php if (in_array("baju", $data['page'])) {
+                                                                                    echo 'active';
+                                                                                  } ?>">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Baju</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="<?= base_url; ?>/admin/item/celana/" class="nav-link  <?php if (in_array("celana", $data['page'])) {
+                                                                                        echo 'active';
+                                                                                      } ?>">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Celana</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="<?= base_url; ?>/admin/item/sepatu/" class="nav-link  <?php if (in_array("sepatu", $data['page'])) {
+                                                                                        echo 'active';
+                                                                                      } ?>">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Sepatu</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= base_url; ?>/admin/user/user" class="nav-link <?php if ($data['page'] == 'user') {
+                                                                                echo 'active';
+                                                                              } ?>">
+                    <i class="nav-icon fas ion-person-stalker"></i>
+                    <p>
+                      User
+                    </p>
+                  </a>
+                </li>
+
+              </ul>
+              <ul class="nav nav-pills nav-sidebar flex-column flex-end mb-2">
+                <li class="nav-item">
+                  <form method='post' action="">
+                    <button type="submit" class="nav-link" name="but_logout">
+                      <i class="nav-icon fas ion-log-out"></i>
+                      <p>
+                        Logout
+                      </p>
+                    </button>
+                  </form>
+                  <!-- <a href="#" class="nav-link ">
+                    <i class="nav-icon fas ion-log-out"></i>
+                    <p>
+                      Logout
+                    </p>
+                  </a> -->
+                </li>
+              </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+          </div>
+          <!-- /.sidebar -->
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
@@ -200,12 +262,12 @@ $result = $DB->resultSet();
                                     <div class="row mt-3"><div class="col-md-12"><label class="labels">Gender</label><select
                                                 class="form-control" id="gender" name="gender">
                                                 <option value="">Masukkan Gender Anda</option>
-                                                <option <?php if($result[0]['gender'] == 1){
+                                                <option <?php if($result[0]['gender'] == 'l'){
                                                     echo 'selected';
-                                                } ?> value="1">Laki-laki</option>
-                                                <option <?php if($result[0]['gender'] == 2){
+                                                } ?> value="l">Laki-laki</option>
+                                                <option <?php if($result[0]['gender'] == 'p'){
                                                     echo 'selected';
-                                                } ?> value="2">Perempuan</option>
+                                                } ?> value="p">Perempuan</option>
                                             </select>
                                             </div>
                                     </div>
