@@ -35,7 +35,7 @@
                 <img src="<?= base_url; ?>/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
               </div>
               <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block"><?= $_SESSION['uname'] ?></a>
               </div>
             </div>
 
@@ -94,9 +94,9 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url; ?>/admin/user" class="nav-link <?php if ($data['page'] == 'user') {
-                                                                          echo 'active';
-                                                                        } ?>">
+                  <a href="<?= base_url; ?>/admin/user/user" class="nav-link <?php if ($data['page'] == 'user') {
+                                                                                echo 'active';
+                                                                              } ?>">
                     <i class="nav-icon fas ion-person-stalker"></i>
                     <p>
                       User
@@ -107,12 +107,20 @@
               </ul>
               <ul class="nav nav-pills nav-sidebar flex-column flex-end mb-2">
                 <li class="nav-item">
-                  <a href="#" class="nav-link ">
+                  <form method='post' action="">
+                    <button type="submit" class="nav-link" name="but_logout">
+                      <i class="nav-icon fas ion-log-out"></i>
+                      <p>
+                        Logout
+                      </p>
+                    </button>
+                  </form>
+                  <!-- <a href="#" class="nav-link ">
                     <i class="nav-icon fas ion-log-out"></i>
                     <p>
                       Logout
                     </p>
-                  </a>
+                  </a> -->
                 </li>
               </ul>
             </nav>

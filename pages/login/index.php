@@ -34,7 +34,12 @@ if (isset($_POST['but_submit'])) {
             $_SESSION['uname'] = $uname;
             $_SESSION['id_user'] = $userdata['id_user'];
             $_SESSION['gender_user'] = $userdata['gender'];
-            header('Location: ' . base_url . '/mixing');
+            $_SESSION['levelr'] = $userdata['level'];
+            if ($userdata['level'] == 2) {
+                header('Location: ' . base_url . '/admin');
+            } else {
+                header('Location: ' . base_url . '/mixing');
+            }
         } else {
             echo "Invalid username and password";
             function_alert("Invalid username and password");
