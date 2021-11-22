@@ -34,9 +34,9 @@ if (isset($_POST['but_submit'])) {
             $_SESSION['uname'] = $uname;
             $_SESSION['id_user'] = $userdata['id_user'];
             $_SESSION['gender_user'] = $userdata['gender'];
-            $_SESSION['levelr'] = $userdata['level'];
+            $_SESSION['level'] = $userdata['level'];
             if ($userdata['level'] == 2) {
-                header('Location: ' . base_url . '/admin');
+                header('Location: ' . base_url . '/admin/');
             } else {
                 header('Location: ' . base_url . '/mixing');
             }

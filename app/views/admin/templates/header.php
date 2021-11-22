@@ -7,13 +7,11 @@ require_once "$root/app/config/config.php";
 
 if (!isset($_SESSION['uname'])) {
   header('Location: ' . base_url . '/login/');
-}
-if (isset($_SESSION['level'])) {
-  if ($_SESSION['level'] == 2) {
+} else {
+  if ($_SESSION['level'] != 2) {
     header('Location: ' . base_url);
   }
 }
-
 if (isset($_POST['but_logout'])) {
   ob_start();
   session_destroy();
