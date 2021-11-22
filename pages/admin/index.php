@@ -3,9 +3,13 @@
         if (strpos($root, 'htdocs') !== false) {
             $root = $root . '\cc_admin';
         }
+        $data['page'] = "dashboard";
+
         require_once "$root/app/config/config.php";
         require_once "$root/app/views/admin/templates/header.php";
         require_once "$root/app/views/admin/templates/sidebar.php";
+
+
         ?>
 
         <div class="content-wrapper">

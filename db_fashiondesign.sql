@@ -167,11 +167,14 @@ CREATE TABLE `user` (
   `username` varchar(30) DEFAULT NULL,
   `password` varchar(60) DEFAULT NULL,
   `gender` varchar(10) DEFAULT NULL,
+  `level` int(11) DEFAULT 1,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `user` */
 
-insert  into `user`(`id_user`,`nama`,`username`,`password`,`gender`) values 
-(10,'User','user','user','laki-laki'),
-(11,'jono','jono','jono','1');
+insert  into `user`(`id_user`,`nama`,`username`,`password`,`gender`,`level`) values 
+(10,'User','user','user','laki-laki',1),
+(11,'jono','jono','jono','1',1),
+(12,'Rebekah George','fubigun','Pa$$w0rd!','perempuan',1),
+(13,'Admin','admin','admin','laki-laki',2);
