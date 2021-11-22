@@ -34,7 +34,6 @@ class Celana
 
     public function getCelanaById($data)
     {
-        echo "CHOOEOE" . $data['id'];
         if ($data['identifier'] == 'CM') {
             $table = $this->table1;
             $col_id = 'id_celana_man';
@@ -42,7 +41,6 @@ class Celana
             $table = $this->table2;
             $col_id = 'id_celana_woman';
         }
-        echo "colid" . $col_id;
         $this->db->query('SELECT *, ' . $col_id . ' as id FROM ' . $table . ' WHERE ' . $col_id . '=:id');
         $this->db->bind('id', $data['id']);
         return $this->db->single();
