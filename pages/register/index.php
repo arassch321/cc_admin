@@ -93,8 +93,8 @@ require_once "$root/app/config/config.php";
                     Gender
                 </div>
                 <p class="tulisan">
-                    <label><input type="radio" name="gender" value="laki-laki" /> Laki-laki</label class="form-register">
-                    <label><input type="radio" name="gender" value="perempuan" /> Perempuan</label class="form-register">
+                    <label><input type="radio" name="gender" value="l" /> Laki-laki</label class="form-register">
+                    <label><input type="radio" name="gender" value="p" /> Perempuan</label class="form-register">
                 </p>
                 <p><span class="sepasi">...</span></p>
                 <input type="submit" name="add_record" class="nav-signup-new btn" value="Buat Akun">

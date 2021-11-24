@@ -64,7 +64,7 @@ if (isset($_POST['but_logout'])) {
           </a>
         </li>
         <li class="nav-item">
-          <a href="#about" class="nav-link">
+          <a href="<?= base_url ?>/about" class="nav-link">
             <span data-hover="Innovations" class="navi-text">
               About Us
             </span>
@@ -97,7 +97,7 @@ if (isset($_POST['but_logout'])) {
               </span>
             </a>
             <div class="dropdown-child">
-              <a href=# class="btn">Profiles</a>
+              <a href="<?= base_url ?>/profile/" class="btn">Profiles</a>
               <form method='post' action="">
                 <input class="btn logout" type="submit" value="Logout" name="but_logout">
               </form>

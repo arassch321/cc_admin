@@ -27,7 +27,6 @@ if (isset($_POST['but_submit'])) {
         $userdata = $DB->single();
         $row = $DB->rowCount();
 
-        echo $userdata['id_user'];
         $count = $row;
 
         if ($count > 0) {
@@ -41,7 +40,6 @@ if (isset($_POST['but_submit'])) {
                 header('Location: ' . base_url . '/mixing');
             }
         } else {
-            echo "Invalid username and password";
             function_alert("Invalid username and password");
         }
     }

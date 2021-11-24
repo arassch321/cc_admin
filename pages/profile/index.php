@@ -7,7 +7,11 @@ require_once "$root/app/config/config.php";
 require_once "$root/app/config/Database.php";
 
 $DB = new Database();
-
+function function_alert($message)
+{
+    // Display the alert box 
+    echo "<script>alert('$message');</script>";
+}
 if (isset($_POST["update_record"])) {
     $nama = $_POST['nama'];
     $username = $_POST['username'];
@@ -20,6 +24,23 @@ if (isset($_POST["update_record"])) {
     $DB->bind('username', $username);
     $DB->bind('gender', $gender);
     $DB->execute();
+    $row = $DB->rowCount();
+
+    $count = $row;
+
+    if ($count > 0) {
+        $_SESSION['uname'] = $username;
+        $_SESSION['gender_user'] = $gender;
+        ob_start();
+        echo "
+        <script>
+            localStorage.clear();
+        </script>";
+        ob_end_flush();
+        header("refresh:0.1;url=" . base_url . "");
+    } else {
+        function_alert("Update fail");
+    }
 }
 if (isset($_POST['but_logout'])) {
     ob_start();
@@ -79,11 +100,11 @@ if (isset($_POST['but_logout'])) {
                         </span>
                     </a>
                     <div class="dropdown-child">
-                            <a href="./profile" class="btn">Profiles</a>
-                            <form method='post' action="">
-                                <input class="btn logout" type="submit" value="Logout" name="but_logout">
-                            </form>
-                        </div>
+                        <a href="./profile" class="btn">Profiles</a>
+                        <form method='post' action="">
+                            <input class="btn logout" type="submit" value="Logout" name="but_logout">
+                        </form>
+                    </div>
                     </div>
                 </li>
             </ul>
@@ -95,26 +116,26 @@ if (isset($_POST['but_logout'])) {
         </nav>
     </header>
     <main>
-        
-                <div class="profile-container">
-                    <form method="POST">
-                        <h3>Nama</h3>
-                        <input class="input-textbox" type="text" name="nama" placeholder="Name"><br>
-                        <h3>Username</h3>
-                        <input class="input-textbox" type="text" name="username" placeholder="Username"><br>
-                        <h3>Gender</h3>
-                        <input type="radio" name="gender" placeholder="Gender" value="l">Laki-laki
-                        <input type="radio" name="gender" placeholder="Gender" value="p">Perempuan
-                        <br>
-                        <div class="btn-container">
-                        <input class="btn-update" type="submit" name="update_record" value="Update">
-                        </div>   
-                        <p><span class="sepasi">...</span></p>
-                        <center><a href="../change-password/" class="signup">Change Password</a></center>
-                    </form>
-                    <br>
-                    <br>
+
+        <div class="profile-container">
+            <form method="POST">
+                <h3>Nama</h3>
+                <input class="input-textbox" type="text" name="nama" placeholder="Name"><br>
+                <h3>Username</h3>
+                <input class="input-textbox" type="text" name="username" placeholder="Username"><br>
+                <h3>Gender</h3>
+                <input type="radio" name="gender" placeholder="Gender" value="l">Laki-laki
+                <input type="radio" name="gender" placeholder="Gender" value="p">Perempuan
+                <br>
+                <div class="btn-container">
+                    <input class="btn-update" type="submit" name="update_record" value="Update">
                 </div>
+                <p><span class="sepasi">...</span></p>
+                <center><a href="../change-password/" class="signup">Change Password</a></center>
+            </form>
+            <br>
+            <br>
+        </div>
 
     </main>
     <footer>
