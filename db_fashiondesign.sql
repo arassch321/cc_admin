@@ -11,14 +11,15 @@ CREATE TABLE `baju_man` (
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `baju_man` */
-INSERT INTO `baju_man` (`id_baju_man`, `nama`, `harga`, `gambar`, `link`) VALUES
+IINSERT INTO `baju_man` (`id_baju_man`, `nama`, `harga`, `gambar`, `link`) VALUES
 (1, 'Polo shirt Kaos Kerah lengan panjang Ua Golf', 150000, 'bm_1.jpg', 'https://tokopedia.link/TUDYQoAU4kb'),
 (2, 'KAOS POLO / KERAH / GOLF PRIA CUTI LAKOS ORIGINAL PIER ONE RETAIL 700K - S, Putih', 99000, 'bm_2.jpg', 'https://tokopedia.link/q9rYZawU4kb'),
 (3, 'Kaos Someone Gold Koi 172D Glow In The Dark - S', 75000, 'bm_3.jpg', 'https://tokopedia.link/zbescSEU4kb'),
 (4, 'Kith X MLB New York Yankees NY Embroidery T-Shirt Navy - M', 189070, 'bm_4.jpg', 'https://tokopedia.link/qA9i3NMU4kb'),
 (5, 'Human Made 2026 T-Shirt Black - M', 179280, 'bm_5.jpg', 'https://tokopedia.link/37BWfqPU4kb'),
-(33, 'Hoodie Pria aesthetic', 90, '2fa5ebad5ada8b728877a6a2c43f9476-u.jfif', 'https://shopee.co.id/Hoodie-Pria-aesthetic-ANCE-STUDIOS-Beludru-PanasMusim-Gugur-Berkerudung-Dingin-Remaja-VersiKoreaTren-i.204598285.4310280697?sp_atk=6aff24c8-8034-421e-a664-eebd67408bfa');
-
+(34, 'Roughneck H012 Black Sig Black Bold Hoodie ', 139000, 'bd245f7f698ed8033da8ce9feb362753-0.jfif', 'https://shopee.co.id/Roughneck-H012-Black-Sig-Black-Bold-Hoodie-i.32427818.7343066165?sp_atk=2a3a4d5a-2e40-4910-bba5-962cb3e4505a'),
+(35, 'Morwick Tshirt    ', 79000, '1fda6bf1e32a22098ef548e323b1300f-f4.jpg', 'https://tokopedia.link/i3Bd4vcLrlb'),
+(36, 'KENETH HOODIE  ', 50000, '0ee9ca616703b78a43eb89ab17e3ff57-81.jpg', 'https://tokopedia.link/WkqzC3yLrlb');
 /*Table structure for table `baju_woman` */
 
 DROP TABLE IF EXISTS `baju_woman`;
@@ -33,7 +34,10 @@ CREATE TABLE `baju_woman` (
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `baju_woman` */
-
+INSERT INTO `baju_woman` (`id_baju_woman`, `nama`, `harga`, `gambar`, `link`) VALUES
+(41, 'Tumblr T-Shirt Bare Bears', 35000, 'cde655ed65dd44c254b6fb0692fa152d-bf.jpg', 'https://tokopedia.link/1yBntO5Lrlb'),
+(42, 'WIMIU Sleepwear', 37300, 'a9122965ddafb4e9fa221cf0cf794c02-ef.jpg', 'https://tokopedia.link/ITwqDRoMrlb'),
+(43, 'Kemeja Korea Oversized', 65000, 'f74def7e943499c618385b494d9acd43-71.jpg', 'https://tokopedia.link/auO08IDMrlb');
 /*Table structure for table `celana_man` */
 
 DROP TABLE IF EXISTS `celana_man`;
