@@ -11,7 +11,7 @@ CREATE TABLE `baju_man` (
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `baju_man` */
-IINSERT INTO `baju_man` (`id_baju_man`, `nama`, `harga`, `gambar`, `link`) VALUES
+INSERT INTO `baju_man` (`id_baju_man`, `nama`, `harga`, `gambar`, `link`) VALUES
 (1, 'Polo shirt Kaos Kerah lengan panjang Ua Golf', 150000, 'bm_1.jpg', 'https://tokopedia.link/TUDYQoAU4kb'),
 (2, 'KAOS POLO / KERAH / GOLF PRIA CUTI LAKOS ORIGINAL PIER ONE RETAIL 700K - S, Putih', 99000, 'bm_2.jpg', 'https://tokopedia.link/q9rYZawU4kb'),
 (3, 'Kaos Someone Gold Koi 172D Glow In The Dark - S', 75000, 'bm_3.jpg', 'https://tokopedia.link/zbescSEU4kb'),
@@ -133,6 +133,8 @@ CREATE TABLE `pakaian_woman` (
 
 DROP TABLE IF EXISTS `sepatu_man`;
 
+DROP TABLE IF EXISTS `sepatu_man`;
+
 CREATE TABLE `sepatu_man` (
   `id_sepatu` int(11) NOT NULL AUTO_INCREMENT,
   `nama` varchar(100) NOT NULL,
@@ -140,13 +142,16 @@ CREATE TABLE `sepatu_man` (
   `gambar` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL,
   PRIMARY KEY (`id_sepatu`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `sepatu_man` */
 
 insert  into `sepatu_man`(`id_sepatu`,`nama`,`harga`,`gambar`,`link`) values 
 (1,'BRODO - Sneakers Pria Active Zeal Beast Olive Orange IS - 41',530,'sm_1.jpg','https://tokopedia.link/8lmpaTtV4kb'),
-(2,'Sneakers Pria BRODO Base Lite All White GS - 41',299000,'sm_2.jpg','https://tokopedia.link/5HtOl8rV4kb');
+(2,'Sneakers Pria BRODO Base Lite All White GS - 41',299000,'sm_2.jpg','https://tokopedia.link/5HtOl8rV4kb'),
+(5,'Geoff Max Official Sandal Pria - Wordler Black',75000,'ac5d3d6944f40823775753388e6babe6-1.jfif','https://shopee.co.id/Geoff-Max-Official-Wordler-Black-Slippers-Sandal-Pria-i.33697514.5016612387?sp_atk=aacc2522-1802-42ff-8ca6-824bed5a0638'),
+(6,'Sneakers Unisex BRODO Active Pacer Full Black',295000,'c0d9ad9a3cfe263d65651b7db9ddf756- 2.jpg','https://www.tokopedia.com/brodo/sneakers-unisex-brodo-active-pacer-full-black-40'),
+(7,'BRODO - Sneakers Active Pacer Navy LGS',295000,'6d3480aa0b4be3abfe1a4a8120d50e1c- 3.jpg','https://www.tokopedia.com/brodo/brodo-sneakers-active-pacer-navy-lgs-36');
 
 /*Table structure for table `sepatu_woman` */
 
@@ -159,9 +164,16 @@ CREATE TABLE `sepatu_woman` (
   `gambar` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL,
   PRIMARY KEY (`id_sepatu_woman`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `sepatu_woman` */
+
+insert  into `sepatu_woman`(`id_sepatu_woman`,`nama`,`harga`,`gambar`,`link`) values 
+(3,'PVN Kara Sepatu Sneakers Wanita Sport Shoes Candy Pink White 372',144900,'c67512506367d269068646212b4ca853-1.jfif','https://shopee.co.id/PVN-Kara-Sepatu-Sneakers-Wanita-Sport-Shoes-Candy-Pink-White-372-i.39910038.1941634390?sp_atk=bfb89ef7-8fca-44be-936d-8216f864b9ab'),
+(4,'PVN Suga Sepatu Sneakers Wanita Putih Pink Shoes 004',144900,'a2e6102ee8a575eb304ba59567476359-2.jfif','https://shopee.co.id/PVN-Suga-Sepatu-Sneakers-Wanita-Putih-Pink-Shoes-004-i.39910038.1690548995'),
+(5,'https://shopee.co.id/PVN-Suga-Sepatu-Sneakers-Wanita-Putih-Pink-Shoes-004-i.39910038.1690548995',200000,'3453cff077456d79f0e970c1281ebc55-3.jfif','https://shopee.co.id/COD-SEPATU-WANITA-TBS06-GEORGIA-BALLET-FLAT-EXTENDED-WIDTH-PREMIUM-IMPORT-i.32286491.3075159830?sp_atk=7ae5db87-40a8-4a18-b458-a239aa759f95'),
+(6,'SANDAL WANITA | CNK CKS139',195000,'d9b9c7cd24c151a7cfa2ffa119e70780-4.jfif','https://shopee.co.id/COD-SANDAL-WANITA-CNK-CKS139-ORI-PREMIUM-IMPORT-i.32286491.3234356039?sp_atk=e2488802-b49e-4658-91f8-447579cf0a3f'),
+(7,'CK-226',210000,'25e00cc374335d799d3de756dbf24d4d-5.jfif','https://shopee.co.id/-FREE-PAPERBAG-FREE-BUBBLEWRAP-CK-226-i.68618598.2756874653');
 
 /*Table structure for table `user` */
 
