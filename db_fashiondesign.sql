@@ -36,7 +36,7 @@ CREATE TABLE `baju_woman` (
 /*Data for the table `baju_woman` */
 INSERT INTO `baju_woman` (`id_baju_woman`, `nama`, `harga`, `gambar`, `link`) VALUES
 (41, 'Tumblr T-Shirt Bare Bears', 35000, 'cde655ed65dd44c254b6fb0692fa152d-bf.jpg', 'https://tokopedia.link/1yBntO5Lrlb'),
-(42, 'WIMIU Sleepwear', 37300, 'a9122965ddafb4e9fa221cf0cf794c02-ef.jpg', 'https://tokopedia.link/ITwqDRoMrlb'),
+(42, 'CARDINAL GIRL ROMPI 3', 215920, 'ec47f4bc80d517d5da46d1d33dcca443-22.jpg', 'https://tokopedia.link/ITwqDRoMrlb'),
 (43, 'Kemeja Korea Oversized', 65000, 'f74def7e943499c618385b494d9acd43-71.jpg', 'https://tokopedia.link/auO08IDMrlb');
 /*Table structure for table `celana_man` */
 
