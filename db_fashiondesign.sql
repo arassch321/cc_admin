@@ -37,7 +37,9 @@ CREATE TABLE `baju_woman` (
 INSERT INTO `baju_woman` (`id_baju_woman`, `nama`, `harga`, `gambar`, `link`) VALUES
 (41, 'Tumblr T-Shirt Bare Bears', 35000, 'cde655ed65dd44c254b6fb0692fa152d-bf.jpg', 'https://tokopedia.link/1yBntO5Lrlb'),
 (42, 'CARDINAL GIRL ROMPI 3', 215920, 'ec47f4bc80d517d5da46d1d33dcca443-22.jpg', 'https://tokopedia.link/ITwqDRoMrlb'),
-(43, 'Kemeja Korea Oversized', 65000, 'f74def7e943499c618385b494d9acd43-71.jpg', 'https://tokopedia.link/auO08IDMrlb');
+(43, 'Kemeja Korea Oversized', 65000, 'f74def7e943499c618385b494d9acd43-71.jpg', 'https://tokopedia.link/auO08IDMrlb'),
+(44, 'Kardigan Rajut Vintage Cheetah', 102900, 'd72b5f84769e4df271428e26f328cf85-b0.jpg', 'https://www.lazada.co.id/products/premium-cardigan-kardigan-rajut-vintage-cheetah-i5773006329-s11228420482.html?spm=a2o4j.searchlistcategory.list.151.80e21f2fvpAMgz&search=1&freeshipping=1'),
+(45, 'EIGER GAIA SWEATER HOODIE NONZIP', 339000, '07842e6ad552cc71444ffc8d047d1347-47.jpg', 'https://www.lazada.co.id/products/eiger-gaia-sweater-hoodie-nonzip-i4587942146-s7955398341.html?spm=a2o4j.searchlistcategory.list.31.4a331f2fECr37w&search=1&freeshipping=1');
 /*Table structure for table `celana_man` */
 
 DROP TABLE IF EXISTS `celana_man`;
