@@ -34,7 +34,6 @@ class Sepatu
 
     public function getSepatuById($data)
     {
-        echo "CHOOEOE" . $data['id'];
         if ($data['identifier'] == 'SM') {
             $table = $this->table1;
             $col_id = 'id_sepatu';
@@ -42,7 +41,6 @@ class Sepatu
             $table = $this->table2;
             $col_id = 'id_sepatu_woman';
         }
-        echo "colid" . $col_id;
         $this->db->query('SELECT *, ' . $col_id . ' as id FROM ' . $table . ' WHERE ' . $col_id . '=:id');
         $this->db->bind('id', $data['id']);
         return $this->db->single();

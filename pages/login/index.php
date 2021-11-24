@@ -27,21 +27,19 @@ if (isset($_POST['but_submit'])) {
         $userdata = $DB->single();
         $row = $DB->rowCount();
 
-        echo $userdata['id_user'];
         $count = $row;
 
         if ($count > 0) {
             $_SESSION['uname'] = $uname;
             $_SESSION['id_user'] = $userdata['id_user'];
             $_SESSION['gender_user'] = $userdata['gender'];
-            $_SESSION['levelr'] = $userdata['level'];
+            $_SESSION['level'] = $userdata['level'];
             if ($userdata['level'] == 2) {
-                header('Location: ' . base_url . '/admin');
+                header('Location: ' . base_url . '/admin/');
             } else {
                 header('Location: ' . base_url . '/mixing');
             }
         } else {
-            echo "Invalid username and password";
             function_alert("Invalid username and password");
         }
     }

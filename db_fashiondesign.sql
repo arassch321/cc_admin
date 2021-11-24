@@ -176,5 +176,5 @@ CREATE TABLE `user` (
 insert  into `user`(`id_user`,`nama`,`username`,`password`,`gender`,`level`) values 
 (10,'User','user','user','laki-laki',1),
 (11,'jono','jono','jono','1',1),
-(12,'Rebekah George','fubigun','Pa$$w0rd!','perempuan',1),
-(13,'Admin','admin','admin','laki-laki',2);
+(12,'Rebekah George','fubigun','Pa$$w0rd!','p',1),
+(13,'Admin','admin','admin','l',2);

@@ -22,7 +22,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
           <!-- Brand Logo -->
-          <a href="index3.html" class="brand-link">
+          <a href="<?= base_url; ?>/admin/" class="brand-link">
             <img src="<?= base_url; ?>/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8" />
             <span class="brand-text font-weight-light">FashionDesignApp</span>
           </a>
@@ -45,7 +45,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                                    with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                  <a href="<?= base_url; ?>/admin" class="nav-link <?php if ($data['page'] == 'dashboard') {
+                  <a href="<?= base_url; ?>/admin/" class="nav-link <?php if ($data['page'] == 'dashboard') {
                                                                       echo 'active';
                                                                     } ?>">
                     <i class="nav-icon fas fa-th"></i>

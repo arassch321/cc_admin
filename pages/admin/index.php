@@ -8,7 +8,19 @@
         require_once "$root/app/config/config.php";
         require_once "$root/app/views/admin/templates/header.php";
         require_once "$root/app/views/admin/templates/sidebar.php";
+        require_once "$root/app/models/AdminPanel.php";
 
+        $pakaianMan = new Pakaian();
+        $pakaianWoman = new Pakaian();
+        $usersCount = new User();
+
+        $pakaianMan = $pakaianMan->getAllPakaianMan();
+        $pakaianWoman = $pakaianWoman->getAllPakaianWoman();
+        $usersCount = $usersCount->getAllUsersCount();
+        $totalPakaian = $pakaianWoman + $pakaianMan;
+
+        $pakaianWoman = ($pakaianWoman / $totalPakaian) * 100;
+        $pakaianMan = ($pakaianMan / $totalPakaian) * 100;
 
         ?>
 
@@ -45,14 +57,14 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>0</h3>
+                                    <h3><?= number_format((float)$pakaianMan, 2, '.', '') ?><sup style="font-size: 20px">%</sup></h3>
 
                                     <p>Man Item</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-man"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="<?= base_url; ?>/admin/item/baju/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -60,14 +72,14 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>0<sup style="font-size: 20px">%</sup></h3>
+                                    <h3><?= number_format((float)$pakaianWoman, 2, '.', '') ?><sup style="font-size: 20px">%</sup></h3>
 
                                     <p>Woman Item</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-woman"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="<?= base_url; ?>/admin/item/baju/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -75,14 +87,14 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>0</h3>
+                                    <h3><?= $usersCount ?></h3>
 
                                     <p>Users</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-stalker"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href=" <?= base_url; ?>/admin/user/user" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
