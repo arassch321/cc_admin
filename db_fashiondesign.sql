@@ -55,10 +55,14 @@ CREATE TABLE `celana_man` (
 
 /*Data for the table `celana_man` */
 
-insert  into `celana_man`(`id_celana_man`,`nama`,`harga`,`gambar`,`link`) values 
-(1,'Motz Chino Washing Basic Reguler Cream - XL',492750,'cm_1.jpg','https://tokopedia.link/pDHh8I6U4kb'),
-(2,'https://tokopedia.link/CKfE9D2U4kb',179280,'cm_2.jpg','https://tokopedia.link/CKfE9D2U4kb'),
-(3,'UNQ Slim Fit Chino Pants Olive - 33/85',179,'cm_3.jpg','https://tokopedia.link/tb2bi80U4kb');
+INSERT INTO `celana_man` (`id_celana_man`, `nama`, `harga`, `gambar`, `link`) VALUES
+(1, 'Motz Chino Washing Basic Reguler Cream - XL', 492750, 'cm_1.jpg', 'https://tokopedia.link/pDHh8I6U4kb'),
+(2, 'https://tokopedia.link/CKfE9D2U4kb', 179280, 'cm_2.jpg', 'https://tokopedia.link/CKfE9D2U4kb'),
+(3, 'UNQ Slim Fit Chino Pants Olive - 33/85', 179, 'cm_3.jpg', 'https://tokopedia.link/tb2bi80U4kb'),
+(4, 'Short Sweatpants Mocca   ', 200000, '6d75c615ae03b8b715d92ca3396f7003-a2.png', 'https://www.bukalapak.com/p/fashion-pria/celana-299/celana-panjang/4cujd9p-jual-short-sweatpants-mocca'),
+(5, 'Celana Jeans Pria Standart - Celana Jeans Panjang - Celana Pria Levis Standart Reguler Murah - Celan', 115000, 'aac46ddb1f83ceb196a579c7352ff1a9-a3.png', 'https://www.bukalapak.com/p/fashion-pria/jeans/a39ejw-jual-celana-jeans-pria-standart-celana-jeans-panjang-celana-pria-levis-standart-reguler-murah-celana-levis-putih-white-premium-murah'),
+(6, 'Faigoods Denim Pants-Medium Wash ', 300000, '80827dc92a0549075c28d0f7b6632df3-a4.png', 'https://www.bukalapak.com/p/fashion-pria/jeans/4cujcws-jual-faigoods-denim-pants-medium-wash');
+
 
 /*Table structure for table `celana_woman` */
 
@@ -74,6 +78,13 @@ CREATE TABLE `celana_woman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `celana_woman` */
+
+INSERT INTO `celana_woman` (`id_celana_woman`, `nama`, `harga`, `gambar`, `link`) VALUES
+(1, 'BIGISSIMO VANQISH LUXURIOUS COMFY SKIRT rok jumbo ', 275000, 'f74def7e943499c618385b494d9acd43-a1.png', 'https://www.bukalapak.com/p/fashion-wanita/rok/4goords-jual-bigissimo-vanqish-luxurious-comfy-skirt-rok-jumbo'),
+(2, 'BIGISSIMO TRIXA CULLOTE PANTS', 195000, '7bb62589f42aa96a6e9bdf96922d4674-a2.png', 'https://www.bukalapak.com/p/fashion-wanita/celana/celana-panjang-2515/4goor7p-jual-bigissimo-trixa-cullote-pants'),
+(3, 'ROK LONG RUFFLE ZARRA KOTAK ', 39900, '731f59bccca7217396459a49c5aa5fcc-a3.png', 'https://www.bukalapak.com/p/fashion-wanita/rok/4acg38d-jual-rok-long-ruffle-zarra-kotak'),
+(4, 'Celana Pensil Cewek Bahan Kain ', 52500, 'd7e05c4839463e318d949d6152ab91db-a4.png', 'https://www.bukalapak.com/p/fashion-wanita/celana/celana-panjang-2515/3xc1cw6-jual-celana-pensil-cewek-bahan-kain'),
+(5, 'Consina Ammonite Celana Panjang Wanita ', 189000, '8a66da851551032ec8eb02e8ccf82c77-a5.png', 'https://www.bukalapak.com/p/fashion-wanita/celana/celana-pendek/223qtrj-jual-consina-ammonite-celana-panjang-wanita');
 
 /*Table structure for table `kategori` */
 
