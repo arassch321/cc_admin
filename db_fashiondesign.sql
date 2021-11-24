@@ -17,7 +17,7 @@ INSERT INTO `baju_man` (`id_baju_man`, `nama`, `harga`, `gambar`, `link`) VALUES
 (3, 'Kaos Someone Gold Koi 172D Glow In The Dark - S', 75000, 'bm_3.jpg', 'https://tokopedia.link/zbescSEU4kb'),
 (4, 'Kith X MLB New York Yankees NY Embroidery T-Shirt Navy - M', 189070, 'bm_4.jpg', 'https://tokopedia.link/qA9i3NMU4kb'),
 (5, 'Human Made 2026 T-Shirt Black - M', 179280, 'bm_5.jpg', 'https://tokopedia.link/37BWfqPU4kb'),
-(33, 'Hoodie Pria aesthetic ANCE STUDIOS Beludru PanasMusim Gugur Berkerudung Dingin Remaja VersiKoreaTren', 90, '2fa5ebad5ada8b728877a6a2c43f9476-u.jfif', 'https://shopee.co.id/Hoodie-Pria-aesthetic-ANCE-STUDIOS-Beludru-PanasMusim-Gugur-Berkerudung-Dingin-Remaja-VersiKoreaTren-i.204598285.4310280697?sp_atk=6aff24c8-8034-421e-a664-eebd67408bfa');
+(33, 'Hoodie Pria aesthetic', 90, '2fa5ebad5ada8b728877a6a2c43f9476-u.jfif', 'https://shopee.co.id/Hoodie-Pria-aesthetic-ANCE-STUDIOS-Beludru-PanasMusim-Gugur-Berkerudung-Dingin-Remaja-VersiKoreaTren-i.204598285.4310280697?sp_atk=6aff24c8-8034-421e-a664-eebd67408bfa');
 
 /*Table structure for table `baju_woman` */
 
