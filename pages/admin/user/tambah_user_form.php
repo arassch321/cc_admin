@@ -1,5 +1,4 @@
 <?php
-require_once("koneksi.php");
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 if (strpos($root, 'htdocs') !== false) {
   $root = $root . '\cc_admin';
@@ -82,7 +81,7 @@ if (isset($_POST['but_logout'])) {
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
+      <a href="<?= base_url; ?>/admin" class="brand-link">
         <img src="<?= base_url; ?>/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8" />
         <span class="brand-text font-weight-light">FashionDesignApp</span>
       </a>
