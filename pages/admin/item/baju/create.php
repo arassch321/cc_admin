@@ -109,7 +109,7 @@
                        <img src="./dist/img/product_img.jpg" alt="" srcset="" width="200px">
                        <div class="form-group">
                          <b>Item Photo</b><br />
-                         <input type="file" class="form-control" name="gambar" required>
+                         <input type="file" class="form-control" name="gambar" accept="image/*" required>
                          <div class="text-danger">
                          </div>
                        </div>

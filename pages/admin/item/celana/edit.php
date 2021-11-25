@@ -131,7 +131,7 @@
                            <img src="<?= base_url ?>/uploads/<?= $data['items']['gambar'] ?>" alt="" srcset="" width="200px">
                            <div class="form-group">
                              <b>Edit Item Photo</b><br />
-                             <input type="file" class="form-control" name="gambar">
+                             <input type="file" class="form-control" accept="image/*" name="gambar">
                              <div class="text-danger">
                              </div>
                            </div>
