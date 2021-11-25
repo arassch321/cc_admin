@@ -61,7 +61,7 @@ CREATE TABLE `celana_man` (
 
 insert  into `celana_man`(`nama`,`harga`,`gambar`,`link`) values 
 ('Motz Chino Washing Basic Reguler Cream - XL',492750,'cm_1.jpg','https://tokopedia.link/pDHh8I6U4kb'),
-('https://tokopedia.link/CKfE9D2U4kb',179280,'cm_2.jpg','https://tokopedia.link/CKfE9D2U4kb'),
+('UNQ Slim Fit Chino Pants Light Pink - 29/73',179280,'cm_2.jpg','https://tokopedia.link/CKfE9D2U4kb'),
 ('UNQ Slim Fit Chino Pants Olive - 33/85',179,'cm_3.jpg','https://tokopedia.link/tb2bi80U4kb'),
 ('Short Sweatpants Mocca   ',200000,'6d75c615ae03b8b715d92ca3396f7003-a2.png','https://www.bukalapak.com/p/fashion-pria/celana-299/celana-panjang/4cujd9p-jual-short-sweatpants-mocca'),
 ('Celana Jeans Pria Standart - Celana Jeans Panjang - Celana Pria Levis Standart Reguler Murah - Celan',115000,'aac46ddb1f83ceb196a579c7352ff1a9-a3.png','https://www.bukalapak.com/p/fashion-pria/jeans/a39ejw-jual-celana-jeans-pria-standart-celana-jeans-panjang-celana-pria-levis-standart-reguler-murah-celana-levis-putih-white-premium-murah'),
