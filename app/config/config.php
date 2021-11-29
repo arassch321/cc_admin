@@ -33,10 +33,6 @@ if ($baseurl == 'http://localhost/cc_admin' || $baseurl == 'http://fashion-desig
     define('DB_USER', 'b999YkcGoV');
     define('DB_PASS', 'qLeQEtL1EP');
     define('DB_NAME', 'b999YkcGoV');
-    // define('DB_HOST', 'botkgkqmgyoiovycsvln-mysql.services.clever-cloud.com');
-    // define('DB_USER', 'uj1qnl4rlq8uzsk2');
-    // define('DB_PASS', 'k8BXQj9UHy2OnC8B4GKy');
-    // define('DB_NAME', 'botkgkqmgyoiovycsvln');
 }
 
 session_start();
