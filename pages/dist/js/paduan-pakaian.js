@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let baju_selected = document.querySelector("#baju_selected");
   let celana_selected = document.querySelector("#celana_selected");
   let sepatu_selected = document.querySelector("#sepatu_selected");
+  let selected_submit = document.querySelector("#selected_submit");
+
   let clothes_imagesAreaImages = document.querySelectorAll(
     "#cloth .images-area img"
   );
@@ -69,9 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
     activeButton();
 
     let currentImageMinusOne = clothes_currentImageCount - 1;
-    clothes_imagesAreaFirstImage.style.marginLeft = `-${
-      210 * currentImageMinusOne
-    }px`;
+    try {
+      clothes_imagesAreaFirstImage.style.marginLeft = `-${
+        210 * currentImageMinusOne
+      }px`;
+    } catch (error) {}
     console.log(600 * currentImageMinusOne);
     console.log(clothes_currentImageCount);
     fillClothID(clothes_currentImageCount);
@@ -122,9 +126,12 @@ document.addEventListener("DOMContentLoaded", function () {
     activeButton();
 
     let currentImageMinusOne = pants_currentImageCount - 1;
-    pants_imagesAreaFirstImage.style.marginLeft = `-${
-      210 * currentImageMinusOne
-    }px`;
+    try {
+      pants_imagesAreaFirstImage.style.marginLeft = `-${
+        210 * currentImageMinusOne
+      }px`;
+    } catch (error) {}
+
     console.log(600 * currentImageMinusOne);
     fillPantsID(pants_currentImageCount);
   })();
@@ -174,9 +181,11 @@ document.addEventListener("DOMContentLoaded", function () {
     activeButton();
 
     let currentImageMinusOne = shoes_currentImageCount - 1;
-    shoes_imagesAreaFirstImage.style.marginLeft = `-${
-      210 * currentImageMinusOne
-    }px`;
+    try {
+      shoes_imagesAreaFirstImage.style.marginLeft = `-${
+        210 * currentImageMinusOne
+      }px`;
+    } catch (error) {}
     console.log(600 * currentImageMinusOne);
     fillShoesID(shoes_currentImageCount);
   })();
@@ -197,23 +206,48 @@ document.addEventListener("DOMContentLoaded", function () {
       ? shoes_nextBtn.classList.add("disabled")
       : shoes_nextBtn.classList.remove("disabled");
   }
+  console.log(baju_selected.value);
+  console.log(celana_selected.value);
+  console.log(sepatu_selected.value);
+
+  if (
+    baju_selected.value !== "" &&
+    celana_selected.value !== "" &&
+    sepatu_selected.value !== ""
+  ) {
+    console.log("enable");
+    selected_submit.classList.remove("disabled");
+
+    selected_submit.disabled = false;
+  } else {
+    console.log("disabled");
+selected_submit.classList.add("disabled");
+
+    selected_submit.disabled = true;
+  }
 });
 
 function fillClothID(id) {
-  let temp = clothes.map((e, i, a) => a[a.length - 1 - i]);
-  let val = temp[id - 1]["id"];
+  if (clothes.length !== 0) {
+    let temp = clothes.map((e, i, a) => a[a.length - 1 - i]);
+    let val = temp[id - 1]["id"];
 
-  baju_selected.value = val;
+    baju_selected.value = val;
+  }
 }
 function fillPantsID(id) {
-  let temp = pants.map((e, i, a) => a[a.length - 1 - i]);
-  let val = temp[id - 1]["id"];
+  if (pants.length !== 0) {
+    let temp = pants.map((e, i, a) => a[a.length - 1 - i]);
+    let val = temp[id - 1]["id"];
 
-  celana_selected.value = val;
+    celana_selected.value = val;
+  }
 }
 function fillShoesID(id) {
-  let temp = shoes.map((e, i, a) => a[a.length - 1 - i]);
-  let val = temp[id - 1]["id"];
+  if (shoes.length !== 0) {
+    let temp = shoes.map((e, i, a) => a[a.length - 1 - i]);
+    let val = temp[id - 1]["id"];
 
-  sepatu_selected.value = val;
+    sepatu_selected.value = val;
+  }
 }
