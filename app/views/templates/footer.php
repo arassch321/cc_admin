@@ -10,6 +10,9 @@
     </div>
     <p>&#169; 2021 Fashion Design Inc.</p>
 </footer>
+<script type="text/javascript">
+  let base_url = "<?= base_url ?>";
+</script>
 <script src="<?= base_url ?>/dist/js/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>

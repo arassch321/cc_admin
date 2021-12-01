@@ -10,18 +10,15 @@ $data['script'] =
     array('data', "dom", 'scriptMix', 'mixing', "paduan-pakaian");
 $data['mix_page'] = 'index';
 
-$root = realpath($_SERVER["DOCUMENT_ROOT"]);
-if (strpos($root, 'htdocs') !== false) {
-    $root = $root . '\cc_admin';
-}
-require_once "$root/app/views/templates/header.php";
-require_once "$root/app/views/templates/sidebar.php";
+
+require_once "../app/views/templates/header.php";
+require_once "../app/views/templates/sidebar.php";
 
 if (!isset($_SESSION['uname'])) {
     header('Location: ' . base_url . '/login/');
 }
 
-require_once "$root/app/models/Recomendation.php";
+require_once "../app/models/Recomendation.php";
 
 $recomendation = new Recomendation();
 $data['items'] = $recomendation->getAllRecomendation();
@@ -101,5 +98,5 @@ $data['items'] = $recomendation->getAllRecomendation();
 </div>
 
 <?php
-require_once "$root/app/views/templates/footer.php";
+require_once "../app/views/templates/footer.php";
 ?>

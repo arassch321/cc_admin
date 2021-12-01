@@ -17,18 +17,18 @@ function url()
 
 $baseurl = url();
 if ($baseurl == 'http://localhost') {
-    $baseurl = "http://localhost/cc_admin";
+    $upOne = dirname(__DIR__, 2);
+    $folder =  substr($upOne, strrpos($upOne, '\\') + 1);
+    $baseurl = "http://localhost/" . $folder;
 }
 define('base_url', $baseurl);
 
-
-if ($baseurl == 'http://localhost/cc_admin' || $baseurl == 'http://fashion-design.test' || $baseurl == 'http://cc_admin.test') {
+if (strpos($baseurl, 'herokuapp.com') === false) {
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
     define('DB_NAME', 'db_fashiondesign');
 } else {
-
     define('DB_HOST', 'remotemysql.com');
     define('DB_USER', 'b999YkcGoV');
     define('DB_PASS', 'qLeQEtL1EP');

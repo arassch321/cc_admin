@@ -12,10 +12,7 @@ $data['script'] =
 $data['mix_page'] = 'pants';
 $data['dataname'] = 'celana_man';
 
-$root = realpath($_SERVER["DOCUMENT_ROOT"]);
-if (strpos($root, 'htdocs') !== false) {
-    $root = $root . '\cc_admin';
-}
+$root = "../..";
 require_once "$root/app/views/templates/header.php";
 require_once "$root/app/views/templates/sidebar.php";
 require_once "$root/app/models/PantsMan.php";
