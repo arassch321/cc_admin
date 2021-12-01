@@ -142,7 +142,7 @@ if (isset($_POST['but_logout'])) {
         <h2>Fashion Design</h3>
             <h4>Berlangganan untuk mendapatkan info dari kami</h4>
             <div class="subscription">
-                <form action="#">
+                <form name="submit-to-google-sheet">
                     <input type="text" name="email" id="email" placeholder="Your Email" autocomplete="off" />
                     <input type="submit" value="Subscribe" />
                 </form>
@@ -150,6 +150,23 @@ if (isset($_POST['but_logout'])) {
             <p>&#169; 2021 Fashion Design Inc.</p>
     </footer>
     <script src="./assets/js/script.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxS0HDer9ar1mba2EZhtEXX4GYfpynSxlwf8HLhs9mIReHDBaML1tmcDde36CtlX2VG/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message));
+            alert('Thanks For Subscribing!');
+            form.reset();
+        })
+    </script>
+
 </body>
 
 </html>
