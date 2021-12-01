@@ -52,10 +52,7 @@ class Sepatu
         }
         $tanggal = md5(date('Y-m-d h:i:s'));
         $foto_nama_new = $tanggal . '-' . substr($data['img_file'], -6);
-        $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-        if (strpos($root, 'htdocs') !== false) {
-            $root = $root . '\cc_admin';
-        }
+        $root = dirname(__DIR__, 2);
         $path = $root . '/pages/uploads/' . $foto_nama_new;
         if ($data['img_type'] == "image/jpg" || $data['img_type'] == 'image/jpeg' || $data['img_type'] == 'image/png' || $data['img_type'] == 'image/gif') //check file extension
         {
@@ -122,10 +119,7 @@ class Sepatu
             $tanggal = md5(date('Y-m-d h:i:s'));
             $foto_nama_new = $tanggal . '-' . substr($data['img_file'], -6);
             echo $data['img_name'];
-            $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-            if (strpos($root, 'htdocs') !== false) {
-                $root = $root . '\cc_admin';
-            }
+            $root = dirname(__DIR__, 2);
             $path = $root . '/pages/uploads/' . $foto_nama_new;
             $directory = $root . '/pages/uploads/';
             if ($data['img_type'] == "image/jpg" || $data['img_type'] == 'image/jpeg' || $data['img_type'] == 'image/png' || $data['img_type'] == 'image/gif') //check file extension
@@ -201,10 +195,7 @@ class Sepatu
             $table = $this->table2;
             $col_id = 'id_sepatu_woman';
         }
-        $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-        if (strpos($root, 'htdocs') !== false) {
-            $root = $root . '\cc_admin';
-        }
+        $root = dirname(__DIR__, 2);
         $directory = $root . '/pages/uploads/';
         if (file_exists($directory . $bajoeh['gambar'])) //check file not exist in your upload folder path
         {
