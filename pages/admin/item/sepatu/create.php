@@ -1,8 +1,5 @@
          <?php
-          $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-          if (strpos($root, 'htdocs') !== false) {
-            $root = $root . '\cc_admin';
-          }
+          $root = "../../../..";
           $data['title'] = "Sepatu";
           $data['page'] =
             array(

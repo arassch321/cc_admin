@@ -1,8 +1,5 @@
 <?php
-$root = realpath($_SERVER["DOCUMENT_ROOT"]);
-if (strpos($root, 'htdocs') !== false) {
-	$root = $root . '\cc_admin';
-}
+$root = "../../..";
 require_once "$root/app/config/config.php";
 require_once "$root/app/config/Database.php";
 
@@ -14,5 +11,3 @@ if (!empty($_POST["save_record"])){
     $DB->execute();
     header('location:user.php');
 }
-
-?>

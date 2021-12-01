@@ -1,10 +1,5 @@
 <?php
-
-$root = realpath($_SERVER["DOCUMENT_ROOT"]);
-if (strpos($root, 'htdocs') !== false) {
-	$root = $root . '\cc_admin';
-}
-require_once "$root/app/config/config.php";
+require_once dirname(__FILE__) . "/config.php";
 
 class Database
 {

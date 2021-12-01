@@ -10,20 +10,17 @@ $data['css'] =
 //     array('data', "dom", 'scriptMix', 'mixing', "paduan-pakaian");
 $data['mix_page'] = 'index';
 
-$root = realpath($_SERVER["DOCUMENT_ROOT"]);
-if (strpos($root, 'htdocs') !== false) {
-    $root = $root . '\cc_admin';
-}
-require_once "$root/app/views/templates/header.php";
+$root = '..';
+require_once "../app/views/templates/header.php";
 // require_once "$root/app/views/templates/sidebar.php";
 
 if (!isset($_SESSION['uname'])) {
     header('Location: ' . base_url . '/login/');
 }
 if (isset($_POST["submit-pakaian"])) {
-    require_once "$root/app/models/ClothMan.php";
-    require_once "$root/app/models/PantsMan.php";
-    require_once "$root/app/models/ShoesMan.php";
+    require_once "../app/models/ClothMan.php";
+    require_once "../app/models/PantsMan.php";
+    require_once "../app/models/ShoesMan.php";
 
     $baju = new ClothMan();
     $celana = new PantsMan();

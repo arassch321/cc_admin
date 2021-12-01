@@ -1,11 +1,8 @@
 <?php
-$root = realpath($_SERVER["DOCUMENT_ROOT"]);
-if (strpos($root, 'htdocs') !== false) {
-    $root = $root . '\cc_admin';
-}
+$loc = dirname(__FILE__) . "/../..";
 
-require_once "$root/app/config/config.php";
-require_once "$root/app/config/Database.php";
+require_once "$loc/app/config/config.php";
+require_once "$loc/app/config/Database.php";
 
 class ShoesMan
 {

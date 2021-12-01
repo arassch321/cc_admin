@@ -1,7 +1,4 @@
-let base_url = window.location.origin;
-if (base_url.includes("localhost")) {
-  base_url = base_url + "/cc_admin";
-}
+
 let buttonAdd = document.querySelectorAll(".btn-add");
 console.log(buttonAdd[0]);
 function ajaxReq() {

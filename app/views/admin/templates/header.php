@@ -1,9 +1,6 @@
 <?php
-$root = realpath($_SERVER["DOCUMENT_ROOT"]);
-if (strpos($root, 'htdocs') !== false) {
-  $root = $root . '\cc_admin';
-}
-require_once "$root/app/config/config.php";
+$loc = dirname(__FILE__) . "/../../..";
+require_once "$loc/config/config.php";
 
 if (!isset($_SESSION['uname'])) {
   header('Location: ' . base_url . '/login/');
