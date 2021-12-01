@@ -21,7 +21,7 @@
       <li class="side-item">
         <a href="<?= base_url; ?>/katalog/shoes" class="nav-link">
           <img class="sidebar-icon" src="<?= base_url; ?>/dist/img/sepatu-logo.png">
-          <p>Shoe</p>
+          <p>Shoes</p>
         </a>
       </li>
 

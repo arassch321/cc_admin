@@ -13,7 +13,7 @@ if (count($_POST) > 0) {
     $DB->query($query);
     $DB->bind('usname', $_SESSION['uname']);
     $result = $DB->single();
-    $row=$result;
+    $row = $result;
 
     if ($_POST["currentPassword"] == $row["password"]) {
         $query = "UPDATE user set password =:password WHERE id_user=:usname";
@@ -111,11 +111,10 @@ if (isset($_POST['but_logout'])) {
                         </span>
                     </a>
                     <div class="dropdown-child">
-                        <a href=# class="btn">Profiles</a>
-                        <a href="./profile" class="btn">Profiles</a>
-                            <form method='post' action="">
-                                <input class="btn logout" type="submit" value="Logout" name="but_logout">
-                            </form>
+                        <a href="../profile/" class="btn">Profiles</a>
+                        <form method='post' action="">
+                            <input class="btn logout" type="submit" value="Logout" name="but_logout">
+                        </form>
                     </div>
                 </li>
             </ul>
@@ -134,15 +133,17 @@ if (isset($_POST['but_logout'])) {
             <div class="welcome">
                 Enter Your Account
             </div>
-            <div class="message" style="color:red;"><?php if(isset($message)) { echo $message; } ?></div>
-            <form name="frmChange" method="post" action="" onSubmit="return validatePassword()" class="form">   
-            <input class="input-form" id="currentPassword" type="password" name="currentPassword" placeholder="Password" style="height: 47px"/>
-            <input class="input-form" id="newPassword" type="password" name="newPassword" placeholder="New Password" style="height: 47px"/>
-            <input class="input-form" id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" style="height: 47px"/>
-            <p><input type="submit" name="submit" value="Change Password" class="btn2"></input></p>
-            <p><a href="../" class="backtologin">Back to Home page</a></p>
-             </div>
-            </form> 
+            <div class="message" style="color:red;"><?php if (isset($message)) {
+                                                        echo $message;
+                                                    } ?></div>
+            <form name="frmChange" method="post" action="" onSubmit="return validatePassword()" class="form">
+                <input class="input-form" id="currentPassword" type="password" name="currentPassword" placeholder="Password" style="height: 47px" />
+                <input class="input-form" id="newPassword" type="password" name="newPassword" placeholder="New Password" style="height: 47px" />
+                <input class="input-form" id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" style="height: 47px" />
+                <p><input type="submit" name="submit" value="Change Password" class="btn2"></input></p>
+                <p><a href="../" class="backtologin">Back to Home page</a></p>
+        </div>
+        </form>
     </main>
     <script src="./assets/js/script.js"></script>
 </body>
