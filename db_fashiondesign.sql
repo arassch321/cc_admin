@@ -150,7 +150,8 @@ CREATE TABLE `user` (
 /*Data for the table `user` */
 
 insert  into `user`(`nama`,`username`,`password`,`gender`,`level`) values 
-('User','user','user','l',1),
-('jono','jono','jono','1',1),
+('Admin','admin','adminkel3','l',2);
 ('Rebekah George','fubigun','Pa$$w0rd!','p',1),
-('Admin','admin','admin','l',2);
+('Angelica Lancaster','angelica','Pa$$w0rd!','p',1),
+('Ina Mcgowan','mcgowan','Pa$$w0rd!','l',1);
+
