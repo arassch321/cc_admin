@@ -79,7 +79,7 @@ $data['items'] = $recomendation->getAllRecomendation();
                 <input type="hidden" name="celana" id="celana_selected" />
                 <input type="hidden" name="sepatu" id="sepatu_selected" />
 
-                <input class="btn-grad mix-submit" type="submit" name="submit-pakaian" value="OK" />
+                <input id="selected_submit" class="btn-grad mix-submit" type="submit" name="submit-pakaian" value="OK" />
             </form>
         </section>
     </div>

@@ -79,7 +79,13 @@ h1 {
 
   width: 100%;
 }
+.mix-submit.disabled {
+  opacity: 17%;
+  margin: auto;
+  margin-top: 50px;
 
+  width: 100%;
+}
 .recomendation {
   margin-top: 60px;
 
