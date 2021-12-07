@@ -1,8 +1,11 @@
 <?php
 $loc = dirname(__FILE__) . "/../..";
+require_once "$loc/vendor/autoload.php";
+
 
 require_once "$loc/app/config/config.php";
 require_once "$loc/app/config/Database.php";
+
 
 class Baju
 {
@@ -51,7 +54,7 @@ class Baju
             $table = $this->table2;
         }
         $tanggal = md5(date('Y-m-d h:i:s'));
-        $foto_nama_new = $tanggal . '-' . substr($data['img_file'], -6);
+        $foto_nama_new = $tanggal;
         $root = dirname(__DIR__, 2);
 
         $path = $root . '/pages/uploads/' . $foto_nama_new;
@@ -61,7 +64,7 @@ class Baju
             {
                 if ($data['img_size'] < 5000000) //check file size 5MB
                 {
-                    move_uploaded_file($data['img_name'], $path); //move upload file temperory directory to your upload folder
+                    \Cloudinary\Uploader::upload($data['img_name'], array("folder" => "fashion-design/", "public_id" => $foto_nama_new));
                 } else {
                     $errorMsg = "Your File To large Please Upload 5MB Size"; //error message file size not large than 5MB
                 }
@@ -118,7 +121,7 @@ class Baju
             # code... Kalo ganti gambar
             echo "GANTI GAMBAR";
             $tanggal = md5(date('Y-m-d h:i:s'));
-            $foto_nama_new = $tanggal . '-' . substr($data['img_file'], -6);
+            $foto_nama_new = $tanggal;
             echo $data['img_name'];
             $root = dirname(__DIR__, 2);
             $path = $root . '/pages/uploads/' . $foto_nama_new;
@@ -131,9 +134,9 @@ class Baju
                     {
                         if (file_exists($directory . $bajoeh['gambar'])) //check file not exist in your upload folder path
                         {
-                            unlink($directory . $bajoeh['gambar']); //unlink function remove previous file
+                            \Cloudinary\Uploader::destroy('fashion-design/' . $bajoeh['gambar']);
                         }
-                        move_uploaded_file($data['img_name'], $path); //move upload file temperory directory to your upload folder
+                        \Cloudinary\Uploader::upload($data['img_name'], array("folder" => "fashion-design/", "public_id" => $foto_nama_new));
                     } else {
                         $errorMsg = "Your File To large Please Upload 5MB Size"; //error message file size not large than 5MB
                     }

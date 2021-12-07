@@ -15,6 +15,8 @@
 </script>
 <script src="<?= base_url ?>/dist/js/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="<?= base_url ?>/node_modules/lodash/lodash.js" type="text/javascript"></script>
+<script src="<?= base_url ?>/node_modules/cloudinary-core/cloudinary-core.js" type="text/javascript"></script>
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxS0HDer9ar1mba2EZhtEXX4GYfpynSxlwf8HLhs9mIReHDBaML1tmcDde36CtlX2VG/exec'
   const form = document.forms['submit-to-google-sheet']
@@ -36,7 +38,12 @@
 if (isset($data['script'])) {
   foreach ($data['script'] as $e => $i) {
 ?>
-    <script src="<?= base_url; ?>/dist/js/<?= $i; ?>.js"></script>
+    <script <?php
+            $mod = '';
+            if ($i == ('mixing')) {
+              $mod = "type =\"module\"";
+            }
+            ?> src=" <?= base_url; ?>/dist/js/<?= $i; ?>.js"></script>
 <?php
   }
 }

@@ -10,6 +10,12 @@
           require_once "$root/app/views/admin/templates/header.php";
           require_once "$root/app/views/admin/templates/sidebar.php";
           require_once "$root/app/models/Baju.php";
+          require_once "$root/app/config/config.php";
+
+          require_once "$root/vendor/autoload.php";
+
+          use Cloudinary\Cloudinary;
+
 
           $baju = new Baju();
 
@@ -103,6 +109,16 @@
                    </div>
                    <div class="col-md-4">
                      <div class="p-3 py-5">
+                       <?php
+                        // $cld = new Cloudinary();
+                        // $cld->imageTag('sample');
+                        $public_id = 'fashion-design/3847321571911347237c071d8315366d';
+                        \Cloudinary\Uploader::destroy($public_id, $options = []);
+                        // \Cloudinary\Uploader::destroy(, $options = []);
+
+                        echo cl_image_tag('fashion-design/3847321571911347237c071d8315366d', ["width" => 200, "crop" => "pad"]);
+
+                        ?>
                        <img src="./dist/img/product_img.jpg" alt="" srcset="" width="200px">
                        <div class="form-group">
                          <b>Item Photo</b><br />
