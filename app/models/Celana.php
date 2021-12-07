@@ -51,7 +51,7 @@ class Celana
             $table = $this->table2;
         }
         $tanggal = md5(date('Y-m-d h:i:s'));
-        $foto_nama_new = $tanggal . '-' . substr($data['img_file'], -6);
+        $foto_nama_new = $tanggal;
         $root = dirname(__DIR__, 2);
         $path = $root . '/pages/uploads/' . $foto_nama_new;
         if ($data['img_type'] == "image/jpg" || $data['img_type'] == 'image/jpeg' || $data['img_type'] == 'image/png' || $data['img_type'] == 'image/gif') //check file extension
@@ -60,7 +60,7 @@ class Celana
             {
                 if ($data['img_size'] < 5000000) //check file size 5MB
                 {
-                    move_uploaded_file($data['img_name'], $path); //move upload file temperory directory to your upload folder
+                    \Cloudinary\Uploader::upload($data['img_name'], array("folder" => "fashion-design/", "public_id" => $foto_nama_new));
                 } else {
                     $errorMsg = "Your File To large Please Upload 5MB Size"; //error message file size not large than 5MB
                 }
@@ -117,7 +117,7 @@ class Celana
             # code... Kalo ganti gambar
             echo "GANTI GAMBAR";
             $tanggal = md5(date('Y-m-d h:i:s'));
-            $foto_nama_new = $tanggal . '-' . substr($data['img_file'], -6);
+            $foto_nama_new = $tanggal;
             echo $data['img_name'];
             $root = dirname(__DIR__, 2);
             $path = $root . '/pages/uploads/' . $foto_nama_new;
@@ -130,9 +130,9 @@ class Celana
                     {
                         if (file_exists($directory . $bajoeh['gambar'])) //check file not exist in your upload folder path
                         {
-                            unlink($directory . $bajoeh['gambar']); //unlink function remove previous file
+                            \Cloudinary\Uploader::destroy('fashion-design/' . $bajoeh['gambar']);
                         }
-                        move_uploaded_file($data['img_name'], $path); //move upload file temperory directory to your upload folder
+                        \Cloudinary\Uploader::upload($data['img_name'], array("folder" => "fashion-design/", "public_id" => $foto_nama_new));
                     } else {
                         $errorMsg = "Your File To large Please Upload 5MB Size"; //error message file size not large than 5MB
                     }
@@ -197,10 +197,9 @@ class Celana
         }
         $root = dirname(__DIR__, 2);
         $directory = $root . '/pages/uploads/';
-        if (file_exists($directory . $bajoeh['gambar'])) //check file not exist in your upload folder path
-        {
-            unlink($directory . $bajoeh['gambar']); //unlink function remove previous file
-        }
+
+        \Cloudinary\Uploader::destroy('fashion-design/' . $bajoeh['gambar']);
+
         $this->db->query('DELETE FROM ' . $table . ' WHERE ' . $col_id . '=:id');
         $this->db->bind('id', $data['id']);
         $this->db->execute();

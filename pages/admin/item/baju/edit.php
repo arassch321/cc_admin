@@ -125,7 +125,9 @@
                        </div>
                        <div class="col-md-4">
                          <div class="p-3 py-5">
-                           <img src="<?= base_url ?>/uploads/<?= $data['items']['gambar'] ?>" alt="" srcset="" width="200px">
+                           <?php
+                            echo cl_image_tag('/fashion-design/' . $data['items']['gambar'], ["width" => 200, "crop" => "pad"]);
+                            ?>
                            <div class="form-group">
                              <b>Edit Item Photo</b><br />
                              <input type="file" class="form-control" accept="image/*" name="gambar">
