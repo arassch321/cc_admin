@@ -10,7 +10,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm install --prefix /pages/node_modules",
-    "build": "npm install --prefix /pages/node_modules"
+    "build": "npm install --prefix /pages/node_modules",
+    "heroku-postbuild": "npm install --prefix /pages/node_modules"
 
   },
   "repository": {
