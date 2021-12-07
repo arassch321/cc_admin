@@ -117,12 +117,12 @@ if (isset($_POST['but_logout'])) {
         <div class="profile-container">
             <form method="POST">
                 <h3>Nama</h3>
-                <input class="input-textbox" type="text" name="nama" placeholder="Name"><br>
+                <input class="input-textbox" type="text" name="nama" placeholder="Name" required><br>
                 <h3>Username</h3>
-                <input class="input-textbox" type="text" name="username" placeholder="Username"><br>
+                <input class="input-textbox" type="text" name="username" placeholder="Username" required><br>
                 <h3>Gender</h3>
-                <input type="radio" name="gender" placeholder="Gender" value="l">Laki-laki
-                <input type="radio" name="gender" placeholder="Gender" value="p">Perempuan
+                <input type="radio" name="gender" placeholder="Gender" value="l" required>Laki-laki
+                <input type="radio" name="gender" placeholder="Gender" value="p" required>Perempuan
                 <br>
                 <div class="btn-container">
                     <input class="btn-update" type="submit" name="update_record" value="Update">

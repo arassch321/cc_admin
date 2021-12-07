@@ -88,7 +88,7 @@ $data['items'] = $recomendation->getAllRecomendation();
             foreach ($data['items'] as $e) {
             ?>
                 <div style="cursor: pointer;" class="recomendation_item ">
-                    <img class="btn-add" data-id="<?= $e['id'] ?>" data-item="<?= $e['Source'] ?>" src="<?= base_url; ?>/uploads/<?= $e['gambar'] ?>" alt="">
+                    <img class="btn-add" data-id="<?= $e['id'] ?>" data-item="<?= $e['Source'] ?>" src="<?= cloudinary_url('/fashion-design/' . $e['gambar']); ?>" alt="">
                 </div>
             <?php
             }
