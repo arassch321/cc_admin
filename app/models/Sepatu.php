@@ -197,10 +197,7 @@ class Sepatu
         }
         $root = dirname(__DIR__, 2);
         $directory = $root . '/pages/uploads/';
-        if (file_exists($directory . $bajoeh['gambar'])) //check file not exist in your upload folder path
-        {
-            unlink($directory . $bajoeh['gambar']); //unlink function remove previous file
-        }
+        \Cloudinary\Uploader::destroy('fashion-design/' . $bajoeh['gambar']);
         $this->db->query('DELETE FROM ' . $table . ' WHERE ' . $col_id . '=:id');
         $this->db->bind('id', $data['id']);
         $this->db->execute();
