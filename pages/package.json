@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/arassch321/cc_admin#readme",
   "engines": {
-    "node": "16.x"
+    "node": "16.x",
+    "npm": ">= 8.1.3"
   }
 }
