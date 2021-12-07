@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/arassch321/cc_admin/issues"
   },
-  "homepage": "https://github.com/arassch321/cc_admin#readme"
+  "homepage": "https://github.com/arassch321/cc_admin#readme",
+  "engines": {
+    "node": "16.x"
+  }
 }
