@@ -9,7 +9,8 @@
   "type":"module",
   "main": "index.js",
   "scripts": {
-    "start": "npm install --prefix /pages/node_modules"
+    "start": "npm install --prefix /pages/node_modules",
+    "build": "npm install --prefix /pages/node_modules"
 
   },
   "repository": {
