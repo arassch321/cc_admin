@@ -129,10 +129,7 @@ class Baju
                 {
                     if ($data['img_size'] < 5000000) //check file size 5MB
                     {
-                        if (file_exists($directory . $bajoeh['gambar'])) //check file not exist in your upload folder path
-                        {
-                            \Cloudinary\Uploader::destroy('fashion-design/' . $bajoeh['gambar']);
-                        }
+                        \Cloudinary\Uploader::destroy('fashion-design/' . $bajoeh['gambar']);
                         \Cloudinary\Uploader::upload($data['img_name'], array("folder" => "fashion-design/", "public_id" => $foto_nama_new));
                     } else {
                         $errorMsg = "Your File To large Please Upload lower than 5MB Size"; //error message file size not large than 5MB
@@ -156,7 +153,7 @@ class Baju
                 $this->db->bind('link', $data['link']);
                 $this->db->execute();
             } else {
-                $this->tambahBaju($data);
+                $this->tambahBajuEZ($data);
                 $this->db->query('DELETE FROM ' . $table_ . ' WHERE ' . $col_id_x . '=:id');
                 $this->db->bind('id', $data['id']);
                 $this->db->execute();
