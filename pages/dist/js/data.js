@@ -1,6 +1,6 @@
 const CLOTH_STORAGE_KEY = "FASHION_DESIGN_STORAGE_CLOTHES";
 const PANTS_STORAGE_KEY = "FASHION_DESIGN_STORAGE_PANT";
-const SHOES_STORAGE_KEY = "FASHION_DESIGN_STORAGE_SHOES";
+const SHOES_STORAGE_KEY = "FASHION_DESIGN_STORAGE_SHOESS";
 // const USER_STORAGE_KEY = "USER_TODO_APP";
 
 let clothes = [];
@@ -33,9 +33,10 @@ function loadDataFromStorage() {
   let pn_data = JSON.parse(pn_serializedData);
   let sho_data = JSON.parse(sho_serializedData);
 
+  if (pn_data !== null) shoes = sho_data;
+
   if (cl_data !== null) clothes = cl_data;
   if (pn_data !== null) pants = pn_data;
-  if (pn_data !== null) shoes = sho_data;
 
   document.dispatchEvent(new Event("ondataloaded"));
 }
@@ -46,25 +47,31 @@ function updateDataToStorage() {
   }
 }
 
-function composeClothObject(id, img, link) {
+function composeClothObject(id, nama, img, link, harga) {
   return {
     id,
+    nama,
     img,
     link,
+    harga,
   };
 }
-function composePantsObject(id, img, link) {
+function composePantsObject(id, nama, img, link, harga) {
   return {
     id,
+    nama,
     img,
     link,
+    harga,
   };
 }
-function composeShoesObject(id, img, link) {
+function composeShoesObject(id, nama, img, link, harga) {
   return {
     id,
+    nama,
     img,
     link,
+    harga,
   };
 }
 
@@ -83,4 +90,32 @@ function findTodoIndex(todoId) {
     index++;
   }
   return -1;
+}
+
+function deleteAllClothes() {
+  if (!(localStorage.getItem(CLOTH_STORAGE_KEY) == null ||localStorage.getItem(CLOTH_STORAGE_KEY) == "[]")) {
+    clothes = [];
+    saveData();
+    location.reload();
+  }
+}
+function deleteAllShoes() {
+  if (!(localStorage.getItem(SHOES_STORAGE_KEY) == null ||localStorage.getItem(SHOES_STORAGE_KEY) == "[]")) {
+    shoes = [];
+    saveData();
+    location.reload();
+  
+    console.log(pants);
+    console.log(shoes);
+  }
+}
+
+function deleteAllPants() {
+  if (!(localStorage.getItem(PANTS_STORAGE_KEY) == null ||localStorage.getItem(PANTS_STORAGE_KEY) == "[]")) {
+    pants = [];
+    saveData();
+    location.reload();
+    console.log(pants);
+    console.log(shoes);
+  }
 }
