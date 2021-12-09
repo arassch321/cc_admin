@@ -46,6 +46,12 @@ if (isset($_POST['but_logout'])) {
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url; ?>/dist/css/adminlte.min.css">
   <!-- Scripts -->
+  <script>
+    function lettersOnly(input){
+      var regex = /[^a-z0-9]/gi;
+      input.value = input.value.replace(regex, '');
+    }
+  </script>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
@@ -217,7 +223,7 @@ if (isset($_POST['but_logout'])) {
               <div class="row mt-3">
                 <div class="col-md-12">
                   <label class="labels">Nama User</label>
-                  <input type="text" class="form-control " placeholder="Masukkan Nama User Anda" value="" name="nama" id="nama" required>
+                  <input type="text" class="form-control " placeholder="Masukkan Nama User Anda" onkeyup="lettersOnly(this)" value="" name="nama" id="nama" required>
                 </div>
               </div>
               <div class="row mt-3">
