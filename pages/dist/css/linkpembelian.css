@@ -260,7 +260,9 @@ nav ul li {
 }
 
 /* ----------- END NAV-------------- */
-
+p.total-harga {
+  font-size: 16px;
+}
 /* ---------- Footer------------- */
 footer {
   font-family: "Poppins", sans-serif;

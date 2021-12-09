@@ -57,6 +57,9 @@ if (isset($_POST["submit-pakaian"])) {
             <td></td>
         </tr>
     </table>
+    <p class="total-harga">
+        <b>Estimasi Total harga</b> :<?= $_POST["total"] ?>
+    </p>
     <a class="btn-grad back-to-mix" href="./mixing">
         Back to Mixing Page
     </a>

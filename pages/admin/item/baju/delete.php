@@ -9,6 +9,8 @@ if (isset($_GET['id'])) {
     $id = substr($_GET['id'], 2, 3);
     $item['id'] = (int) $id;
     if ($baju->deleteBaju($item) > 0) {
+        $_SESSION['success'] = 'Berhasil menghapus data';
+
 ?>
         <script>
             location.replace("./");

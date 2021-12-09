@@ -3,7 +3,6 @@
  let clothesListContainer = document.querySelector(
   "#pick_cloth_img .images-area"
 );
-
 document.addEventListener("DOMContentLoaded", function () {
   if (clothes.length > 0) {
     console.log(clothesListContainer);
@@ -31,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 let pantsListContainer = document.querySelector("#pick_pants_img .images-area");
+let shoesListContainer = document.querySelector("#pick_shoes_img .images-area");
 
 document.addEventListener("DOMContentLoaded", function () {
   if (pants.length > 0) {
@@ -56,10 +56,17 @@ document.addEventListener("DOMContentLoaded", function () {
     toCatalog.href = "./katalog/pants";
     pantsListContainer.append(toCatalog);
   }
-});
-let shoesListContainer = document.querySelector("#pick_shoes_img .images-area");
+    if (shoes.length > 0) {
+      
+    }else{
+      shoes = [];
+    }
+  try {
+      let hah = shoes.length;
 
-document.addEventListener("DOMContentLoaded", function () {
+  } catch (error) {
+    let shoes = [];
+  }
   if (shoes.length > 0) {
     console.log(shoesListContainer);
     shoes
