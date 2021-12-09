@@ -21,6 +21,13 @@ require_once "../../app/config/config.php";
     <link rel="stylesheet" href="./assets/css/Regis.css">
     <link rel="stylesheet" href="./cssregister.css">
 
+    <script>
+    function lettersOnly(input){
+      var regex = /[^a-z0-9]/gi;
+      input.value = input.value.replace(regex, '');
+    }
+  </script>
+
     <title>Register</title>
 </head>
 
@@ -73,11 +80,11 @@ require_once "../../app/config/config.php";
                 <div class="welcome">
                     Nama Lengkap
                 </div>
-                <input type="text_name" name="name" class="form-register" required>
+                <input type="text_name" onkeyup="lettersOnly(this)" name="name" class="form-register" required>
                 <div class="welcome">
                     Username
                 </div>
-                <input type="text_username" name="username" class="form-register" required>
+                <input type="text_username" onkeyup="lettersOnly(this)" name="username" class="form-register" required>
                 <div class="welcome">
                     Password
                 </div>

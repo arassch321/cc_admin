@@ -66,6 +66,12 @@ if (isset($_POST['but_logout'])) {
     <link rel="stylesheet" href="./assets/css/profile.css">
     <link rel="stylesheet" href="./assets/css/side-bar.css">
     <title>Profile</title>
+    <script>
+    function lettersOnly(input){
+      var regex = /[^a-z0-9]/gi;
+      input.value = input.value.replace(regex, '');
+    }
+  </script>
 </head>
 
 <body>
@@ -124,7 +130,7 @@ if (isset($_POST['but_logout'])) {
                 <h3>Username</h3>
                 <input class="input-textbox" style="font-size:x-large" type="text" name="username" value="<?php echo $result[0]['username']; ?>" disabled><br>
                 <h3>Nama</h3>
-                <input class="input-textbox" style="font-size:large" type="text" name="nama" value="<?php echo $result[0]['nama']; ?>" required><br>
+                <input class="input-textbox" style="font-size:large" type="text" name="nama" onkeyup="lettersOnly(this)" value="<?php echo $result[0]['nama']; ?>" required><br>
                 <h3>Gender</h3>
                 <input type="radio" name="gender" placeholder="Gender" <?php if ($result[0]['gender'] == 'l') {
                               echo 'checked';

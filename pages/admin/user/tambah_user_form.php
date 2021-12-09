@@ -229,7 +229,7 @@ if (isset($_POST['but_logout'])) {
               <div class="row mt-3">
                 <div class="col-md-12">
                   <label class="labels">Username</label>
-                  <input type="text" class="form-control " placeholder="Masukkan Nama Username Anda" value="" name="username" id="username" required>
+                  <input type="text" class="form-control " placeholder="Masukkan Nama Username Anda" onkeyup="lettersOnly(this)" value="" name="username" id="username" required>
                 </div>
               </div>
               <div class="row mt-3">

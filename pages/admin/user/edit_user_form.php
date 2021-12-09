@@ -55,6 +55,13 @@ if (isset($_POST['but_logout'])) {
   <link rel="stylesheet" href="<?= base_url; ?>/dist/css/adminlte.min.css">
   <!-- Scripts -->
 
+  <script>
+    function lettersOnly(input){
+      var regex = /[^a-z0-9]/gi;
+      input.value = input.value.replace(regex, '');
+    }
+  </script>
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
@@ -229,19 +236,19 @@ if (isset($_POST['but_logout'])) {
                 <h4 class="text-right">Details</h4>
               </div>
               <div class="row mt-3">
-                <div class="col-md-12"><label class="labels">ID User</label><input type="text" class="form-control " placeholder="ID User" value="<?php echo $result[0]['id_user']; ?>" id="nama" name="id_user" maxlength="10" readonly>
+                <div class="col-md-12"><label class="labels">ID User</label><input type="text" class="form-control " placeholder="ID User" value="<?php echo $result[0]['id_user']; ?>" id="nama" name="id_user" maxlength="10" disabled>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col-md-12">
                   <label class="labels">Username</label>
-                  <input type="text" class="form-control " placeholder="Masukkan Nama Username Anda" value="<?php echo $result[0]['username']; ?>" name="username" id="username" readonly>
+                  <input type="text" class="form-control " placeholder="Masukkan Nama Username Anda" value="<?php echo $result[0]['username']; ?>" name="username" id="username" disabled>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col-md-12">
                   <label class="labels">Nama User</label>
-                  <input type="text" class="form-control " placeholder="Masukkan Nama User Anda" value="<?php echo $result[0]['nama']; ?>" name="nama" id="nama" required>
+                  <input type="text" class="form-control " placeholder="Masukkan Nama User Anda" onkeyup="lettersOnly(this)" value="<?php echo $result[0]['nama']; ?>" name="nama" id="nama" required>
                 </div>
               </div>
               <div class="row mt-3">
