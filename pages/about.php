@@ -109,113 +109,113 @@ if (isset($_POST['but_logout'])) {
     </main>
 
     <div class="whos-speaking-area speakers pad100 co">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title text-center">
-                    <div class="title-text mb50">
-                        <h2 class=" mb-5">Our Team</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <div class="title-text mb50">
+                            <h2 class=" mb-5">Our Team</h2>
+                        </div>
                     </div>
                 </div>
+                <!-- /col end-->
             </div>
-            <!-- /col end-->
+            <!-- /.row  end-->
+            <div class="row mb50">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
+                    <div class="speakers xs-mb30">
+                        <div class="spk-img">
+                            <img class="img-fluid" src="./dist/img/encuf.png" alt="trainer-img" />
+                        </div>
+                        <div class="spk-info">
+                            <h3>Muhammad Yusuf Hasbullah</h3>
+                            <p>Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /col end-->
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
+                    <div class="speakers xs-mb30">
+                        <div class="spk-img">
+                            <img class="img-fluid" src="./dist/img/ariyadi.png" alt="trainer-img" />
+                        </div>
+                        <div class="spk-info">
+                            <h3>Muhammad Ariyadi</h3>
+                            <p>UI UX Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /col end-->
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
+                    <div class="speakers xs-mb30">
+                        <div class="spk-img">
+                            <img class="img-fluid" src="./dist/img/aida.png" alt="trainer-img" />
+                        </div>
+                        <div class="spk-info">
+                            <h3>Aida Raima</h3>
+                            <p>Analis Manajemen</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /col end-->
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
+                    <div class="speakers">
+                        <div class="spk-img">
+                            <img class="img-fluid" src="./dist/img/zulfa.png" alt="trainer-img" />
+                        </div>
+                        <div class="spk-info">
+                            <h3>Zulva Farabi</h3>
+                            <p>Frontend</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /col end-->
+            </div>
+            <!-- /row end-->
+            <div class="row mb50">
+                <div class="offset-2 no-gutter"></div>
+                <!-- /col end-->
+                <div class="col-xl-4 col-lg-3 col-md-4 col-sm-12 text-center">
+                    <div class="speakers xs-mb30">
+                        <div class="spk-img">
+                            <img class="img-fluid" src="./dist/img/max.png" alt="trainer-img" />
+                        </div>
+                        <div class="spk-info">
+                            <h4>Maxillianus Putra Huya Sugan</h4>
+                            <p>Frontend</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /col end-->
+                <div class="col-xl-4 col-lg-3 col-md-4 col-sm-12">
+                    <div class="speakers xs-mb30 text-center">
+                        <div class="spk-img">
+                            <img class="img-fluid" src="./dist/img/ardy.png" alt="trainer-img" />
+                        </div>
+                        <div class="spk-info">
+                            <h4>Muhammad Ardhy Satrio Jati</h4>
+                            <p>Backend</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /col end-->
+                <div class="col-xl-4 col-lg-3 col-md-4 col-sm-12 text-center">
+                    <div class="speakers">
+                        <div class="spk-img">
+                            <img class="img-fluid" src="./dist/img/aras.png" alt="trainer-img" />
+                        </div>
+                        <div class="spk-info">
+                            <h4>Muhammad Arras</h4>
+                            <p>Backend</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /col end-->
+            </div>
+            <!-- /row end-->
         </div>
-        <!-- /.row  end-->
-        <div class="row mb50">
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
-                <div class="speakers xs-mb30">
-                    <div class="spk-img">
-                        <img class="img-fluid" src="./dist/img/yusuf.png" alt="trainer-img" />
-                    </div>
-                    <div class="spk-info">
-                        <h3>Muhammad Yusuf Hasbullah</h3>
-                        <p>Project Manager</p>
-                    </div>
-                </div>
-            </div>
-            <!-- /col end-->
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
-                <div class="speakers xs-mb30">
-                    <div class="spk-img">
-                        <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="trainer-img" />
-                    </div>
-                    <div class="spk-info">
-                        <h3>Muhammad Ariyadi</h3>
-                        <p>UI UX Designer</p>
-                    </div>
-                </div>
-            </div>
-            <!-- /col end-->
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
-                <div class="speakers xs-mb30">
-                    <div class="spk-img">
-                        <img class="img-fluid" src="./dist/img/aida.jpg" alt="trainer-img" />
-                    </div>
-                    <div class="spk-info">
-                        <h3>Aida Raima</h3>
-                        <p>Analis Manajemen</p>
-                    </div>
-                </div>
-            </div>
-            <!-- /col end-->
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
-                <div class="speakers">
-                    <div class="spk-img">
-                        <img class="img-fluid" src="./dist/img/zulfa.jpeg" alt="trainer-img" />
-                    </div>
-                    <div class="spk-info">
-                        <h3>Zulva Farabi</h3>
-                        <p>Frontend</p>
-                    </div>
-                </div>
-            </div>
-            <!-- /col end-->
-        </div>
-        <!-- /row end-->
-        <div class="row mb50">
-            <div class="offset-2 no-gutter"></div>
-            <!-- /col end-->
-            <div class="col-xl-4 col-lg-3 col-md-4 col-sm-12 text-center">
-                <div class="speakers xs-mb30">
-                    <div class="spk-img">
-                        <img class="img-fluid" src="./dist/img/max.png" alt="trainer-img" />
-                    </div>
-                    <div class="spk-info">
-                        <h4>Maxillianus Putra Huya Sugan</h4>
-                        <p>Frontend</p>
-                    </div>
-                </div>
-            </div>
-            <!-- /col end-->
-            <div class="col-xl-4 col-lg-3 col-md-4 col-sm-12">
-                <div class="speakers xs-mb30 text-center">
-                    <div class="spk-img">
-                        <img class="img-fluid" src="./dist/img/ardy.jpeg" alt="trainer-img" />
-                    </div>
-                    <div class="spk-info">
-                        <h4>Muhammad Ardhy Satrio Jati</h4>
-                        <p>Backend</p>
-                    </div>
-                </div>
-            </div>
-            <!-- /col end-->
-            <div class="col-xl-4 col-lg-3 col-md-4 col-sm-12 text-center">
-                <div class="speakers">
-                    <div class="spk-img">
-                        <img class="img-fluid" src="./dist/img/aras.jpg" alt="trainer-img" />
-                    </div>
-                    <div class="spk-info">
-                        <h4>Muhammad Arras</h4>
-                        <p>Backend</p>
-                    </div>
-                </div>
-            </div>
-            <!-- /col end-->
-        </div>
-        <!-- /row end-->
+        <!-- /container end-->
     </div>
-    <!-- /container end-->
-</div>
     <footer>
         <h2>Fashion Design</h3>
             <h4>Berlangganan untuk mendapatkan info dari kami</h4>
