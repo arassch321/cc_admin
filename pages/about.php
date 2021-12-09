@@ -20,12 +20,12 @@ if (isset($_POST['but_logout'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento:400">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy:400">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500">
-
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./dist/css/index_aboutus.css">
     <link rel="stylesheet" href="./dist/css/sidebar.css">
     <title>Base | Fashion Design</title>
@@ -40,14 +40,14 @@ if (isset($_POST['but_logout'])) {
             </div>
             <ul class="menu-container">
                 <li class="nav-item">
-                    <a href="<?= base_url ?>" class="nav-link">
+                    <a href="<?= base_url ?>" class="nav-link text-dark">
                         <span data-hover="Home" class="navi-text">
                             Home
                         </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="./about.php" class="nav-link">
+                    <a href="./about.php" class="nav-link text-dark">
                         <span data-hover="Innovations" class="navi-text">
                             About Us
                         </span>
@@ -57,14 +57,14 @@ if (isset($_POST['but_logout'])) {
                 if (!isset($_SESSION['uname'])) {
                 ?>
                     <li class="nav-item">
-                        <a href="./login/" class="nav-link btn">
+                        <a href="./login/" class="nav-link btn text-dark">
                             <span data-hover="Innovations" class="navi-text">
                                 Login
                             </span>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link nav-signup btn" style="border-radius:40px;" href="./register/">
+                        <a class="nav-link nav-signup btn text-dark" style="border-radius:40px;" href="./register/">
                             <span data-hover="Innovations" class="navi-text">
                                 Sign Up
                             </span>
@@ -74,7 +74,7 @@ if (isset($_POST['but_logout'])) {
                 } else {
                 ?>
                     <li class="nav-item" id="dropdown">
-                        <a class="nav-link btn">
+                        <a class="nav-link btn ">
                             <span data-hover="Innovations" class="navi-text">
                                 My Account
                             </span>
@@ -98,11 +98,7 @@ if (isset($_POST['but_logout'])) {
         </nav>
     </header>
     <main>
-
-
-
         <div class="mid">
-
             <h1>
                 ABOUT US
             </h1>
@@ -111,6 +107,115 @@ if (isset($_POST['but_logout'])) {
         </div>
 
     </main>
+
+    <div class="whos-speaking-area speakers pad100 co">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title text-center">
+                    <div class="title-text mb50">
+                        <h2 class=" mb-5">Our Team</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- /col end-->
+        </div>
+        <!-- /.row  end-->
+        <div class="row mb50">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
+                <div class="speakers xs-mb30">
+                    <div class="spk-img">
+                        <img class="img-fluid" src="./dist/img/yusuf.png" alt="trainer-img" />
+                    </div>
+                    <div class="spk-info">
+                        <h3>Muhammad Yusuf Hasbullah</h3>
+                        <p>Project Manager</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /col end-->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
+                <div class="speakers xs-mb30">
+                    <div class="spk-img">
+                        <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="trainer-img" />
+                    </div>
+                    <div class="spk-info">
+                        <h3>Muhammad Ariyadi</h3>
+                        <p>UI UX Designer</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /col end-->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
+                <div class="speakers xs-mb30">
+                    <div class="spk-img">
+                        <img class="img-fluid" src="./dist/img/aida.jpg" alt="trainer-img" />
+                    </div>
+                    <div class="spk-info">
+                        <h3>Aida Raima</h3>
+                        <p>Analis Manajemen</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /col end-->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 text-center">
+                <div class="speakers">
+                    <div class="spk-img">
+                        <img class="img-fluid" src="./dist/img/zulfa.jpeg" alt="trainer-img" />
+                    </div>
+                    <div class="spk-info">
+                        <h3>Zulva Farabi</h3>
+                        <p>Frontend</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /col end-->
+        </div>
+        <!-- /row end-->
+        <div class="row mb50">
+            <div class="offset-2 no-gutter"></div>
+            <!-- /col end-->
+            <div class="col-xl-4 col-lg-3 col-md-4 col-sm-12 text-center">
+                <div class="speakers xs-mb30">
+                    <div class="spk-img">
+                        <img class="img-fluid" src="./dist/img/max.png" alt="trainer-img" />
+                    </div>
+                    <div class="spk-info">
+                        <h4>Maxillianus Putra Huya Sugan</h4>
+                        <p>Frontend</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /col end-->
+            <div class="col-xl-4 col-lg-3 col-md-4 col-sm-12">
+                <div class="speakers xs-mb30 text-center">
+                    <div class="spk-img">
+                        <img class="img-fluid" src="./dist/img/ardy.jpeg" alt="trainer-img" />
+                    </div>
+                    <div class="spk-info">
+                        <h4>Muhammad Ardhy Satrio Jati</h4>
+                        <p>Backend</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /col end-->
+            <div class="col-xl-4 col-lg-3 col-md-4 col-sm-12 text-center">
+                <div class="speakers">
+                    <div class="spk-img">
+                        <img class="img-fluid" src="./dist/img/aras.jpg" alt="trainer-img" />
+                    </div>
+                    <div class="spk-info">
+                        <h4>Muhammad Arras</h4>
+                        <p>Backend</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /col end-->
+        </div>
+        <!-- /row end-->
+    </div>
+    <!-- /container end-->
+</div>
     <footer>
         <h2>Fashion Design</h3>
             <h4>Berlangganan untuk mendapatkan info dari kami</h4>

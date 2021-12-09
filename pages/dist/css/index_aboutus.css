@@ -32,13 +32,12 @@ header {
   /* top: 0;
   width: 100%;
   position: fixed; */
-  background-color: #e1e1e1;
-  border-bottom: 1px solid #e1e1e1;
+  background-color: #e1e1e1 !important;
+  border-bottom: 1px solid #e1e1e1 !important;
 }
 main {
   display: flex;
-  min-height: calc(100vh - 98px);
-  background-color: #e1e1e1;
+  background-color: #e1e1e1 !important;
 }
 .mid {
   font-family: khmer;
@@ -46,12 +45,21 @@ main {
   width: 100%;
   padding-top:1%;
   font-size: 40px;
-  background-color:#ffffff;
+  background-color:#ffffff !important;
      height: 300px;
      border: 2px solid rgba(0, 0, 0, 0);
      margin: 30px;
-  box-shadow: 7px 7px 10px 2px rgb(66, 75, 207);
+  box-shadow: 7px 7px 10px 2px rgb(66, 75, 207) !important;
  
+} .mid h1 {
+  font-size: 50px;
+
+}
+.spk-img img{
+  min-height: 300px;
+  max-height: 300px;
+  width: 300px;
+  object-fit: cover;
 }
 .tengahkiri {
   font-family: khmer;
@@ -67,7 +75,7 @@ main {
  */
 }
 .wr-item .btnhm:hover {
-  background-color: #888c91;
+  background-color: #888c91 !important;
 }
 .tengahkanan {
   font-family: khmer;
@@ -88,7 +96,7 @@ main {
   margin-top: 30px;
   padding: 10px 20px;
   color: rgb(0, 0, 0);
-  background-color: #ffffff;
+  background-color: #ffffff !important;
   border-radius: 60px;
   display: flex;
   align-items: center;
@@ -108,8 +116,8 @@ main {
 .btn {
   margin-top: 30px;
   padding: 10px 20px;
-  color: #fff;
-  background-color: #007bff;
+  color: #fff !important;
+  background-color: #007bff !important;
   border-radius: 60px;
   display: flex;
   align-items: center;
@@ -210,6 +218,10 @@ nav ul li {
 .dropdown-child .btn {
   margin-top: 10px;
 }
+
+.speakers{
+  background-color: #e1e1e1 ;
+} 
 
 #dropdown:hover .dropdown-child {
   display: flex;

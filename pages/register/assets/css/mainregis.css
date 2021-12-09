@@ -11,6 +11,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   display: flex;
@@ -249,6 +250,17 @@ footer h4 {
   font-size: 16px;
   cursor: pointer;
 }
+
+.nav-signup.btn {
+  background-color: #007bff;
+  color: #fff;
+}
+.nav-login.btn {
+  background-color: white;
+  color:black;
+}
+
+
 /* ---------- END Footer------------- */
 
 /* -------------Responsive----------------- */

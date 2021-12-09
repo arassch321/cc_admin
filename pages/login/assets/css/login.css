@@ -137,7 +137,10 @@ input::placeholder{
     color: white;
     text-decoration: underline;
 }
-
+.emailto{
+    text-decoration: underline;
+    text-align: center;
+}
 .signup a:hover{
     color: rgb(180, 180, 180);
 }
