@@ -1,11 +1,11 @@
 {
     "name": "kel6/fashion-design",
     "require": {
-        "php": "^7.4",
+        "php": ">=7.4",
         "cloudinary/cloudinary_php": "^1"
     },
     "require-dev": {
-        "php": "^7.4"
+        "php": ">=7.4"
     },
     "autoload": {
         "psr-4": {
