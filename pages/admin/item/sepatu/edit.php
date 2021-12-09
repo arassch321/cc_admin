@@ -40,16 +40,20 @@
                   $dataInput['img_type']  = $_FILES["gambar"]["type"]; //file name "txt_file" 
                   $dataInput['img_size']   = $_FILES["gambar"]["size"];
                   $dataInput['img_name']  = $_FILES["gambar"]["tmp_name"];
-                  echo "MENGGIMPUT" . $dataInput['img_name'];
                 }
                 // $dataInput['gambar']  = $_POST['gambar'];
+                try {
+                  if ($sepatu->updateDataSepatu($dataInput) > 0) {
+                    $_SESSION['success'] = 'Berhasil mengubah data sepatu "' . $dataInput['nama'] . '"';
 
-                if ($sepatu->updateDataSepatu($dataInput) > 0) {
               ?>
-                 <script>
-                   location.replace("./");
-                 </script>
+                   <script>
+                     location.replace("./");
+                   </script>
              <?php
+                  }
+                } catch (\Exception $error) {
+                  $_SESSION['error'] = 'Gagal mengubah data, ' . $error->getMessage();
                 }
               }
               ?>
@@ -75,7 +79,17 @@
 
                <!-- Main content -->
                <section class="content">
-
+                 <?php
+                  //Message
+                  if (isset($_SESSION['error'])) {
+                  ?>
+                   <div class="alert alert-danger" role="alert">
+                     <?= $_SESSION['error'] ?>
+                   </div>
+                 <?php
+                    unset($_SESSION['error']);
+                  }
+                  ?>
                  <div class="card p-4">
                    <form method="POST" enctype="multipart/form-data" action="">
                      <div class="row">
@@ -125,10 +139,12 @@
                        </div>
                        <div class="col-md-4">
                          <div class="p-3 py-5">
-                           <img src="<?= base_url ?>/uploads/<?= $data['items']['gambar'] ?>" alt="" srcset="" width="200px">
+                           <?php
+                            echo cl_image_tag('/fashion-design/' . $data['items']['gambar'], ["width" => 200, "crop" => "pad"]);
+                            ?>
                            <div class="form-group">
                              <b>Edit Item Photo</b><br />
-                             <input type="file" class="form-control" accept="image/*" name="gambar">
+                             <input type="file" class="form-control" name="gambar" accept="image/png, image/jpeg, image/webp">
                              <div class="text-danger">
                              </div>
                            </div>

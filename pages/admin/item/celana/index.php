@@ -35,7 +35,17 @@ $data['items'] = $celana->getAllCelana();
 
   <!-- Main content -->
   <section class="content">
-
+    <?php
+    //Message
+    if (isset($_SESSION['success'])) {
+    ?>
+      <div class="alert alert-success" role="alert">
+        <?= $_SESSION['success'] ?>
+      </div>
+    <?php
+      unset($_SESSION['success']);
+    }
+    ?>
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Table Celana</h3>

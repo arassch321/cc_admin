@@ -1,8 +1,24 @@
+  let baju_picked = document.querySelector(".picker-price#cloth h4");
+  let baju_picked_price = document.querySelector(".picker-price#cloth p");
+  let celana_picked = document.querySelector(".picker-price#pants h4");
+  let celana_picked_price = document.querySelector(".picker-price#pants p");
+  let sepatu_picked = document.querySelector(".picker-price#shoes h4");
+  let sepatu_picked_price = document.querySelector(".picker-price#shoes p");
+  let picked_total = document.querySelector(".picker-price#total p");
+
+
 document.addEventListener("DOMContentLoaded", function () {
-  let baju_selected = document.querySelector("#baju_selected");
-  let celana_selected = document.querySelector("#celana_selected");
-  let sepatu_selected = document.querySelector("#sepatu_selected");
-  let selected_submit = document.querySelector("#selected_submit");
+
+  let celana_del = document.querySelector(".picker-btn#pants .btn");
+  let sepatu_del = document.querySelector(".picker-btn#shoes .btn");
+
+  let baju_del = document.querySelector(".picker-btn#cloth .btn");
+
+
+  celana_del.addEventListener("click", deleteAllPants);
+  sepatu_del.addEventListener("click", deleteAllShoes);
+
+  baju_del.addEventListener("click", deleteAllClothes);
 
   let clothes_imagesAreaImages = document.querySelectorAll(
     "#cloth .images-area img"
@@ -22,6 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   let pants_imagesAreaFirstImage = document.querySelector(
     "#pants .images-area .firstImage"
+  );
+  let pants_imagesAreaFirstImageClose = document.querySelector(
+    "#pants .images-area .firstImage .firstImageClose"
   );
 
   let pants_previousBtn = document.querySelector(".previous-btn#pick_pants");
@@ -130,6 +149,9 @@ document.addEventListener("DOMContentLoaded", function () {
       pants_imagesAreaFirstImage.style.marginLeft = `-${
         210 * currentImageMinusOne
       }px`;
+      pants_imagesAreaFirstImageClose.style.marginLeft = `-${
+        210 * currentImageMinusOne
+      }px`;
     } catch (error) {}
 
     console.log(600 * currentImageMinusOne);
@@ -206,6 +228,15 @@ document.addEventListener("DOMContentLoaded", function () {
       ? shoes_nextBtn.classList.add("disabled")
       : shoes_nextBtn.classList.remove("disabled");
   }
+
+  console.log(baju_picked.value);
+  console.log(baju_picked_price.value);
+  console.log(celana_picked.value);
+  console.log(celana_picked_price.value);
+  console.log(sepatu_picked.value);
+  console.log(sepatu_picked_price.value);
+  console.log(picked_total.value);
+
   console.log(baju_selected.value);
   console.log(celana_selected.value);
   console.log(sepatu_selected.value);
@@ -231,23 +262,76 @@ function fillClothID(id) {
   if (clothes.length !== 0) {
     let temp = clothes.map((e, i, a) => a[a.length - 1 - i]);
     let val = temp[id - 1]["id"];
+    let name = temp[id - 1]["nama"];
+    let price = temp[id - 1]["harga"];
+    baju_picked.innerHTML = name;
+    baju_picked_price.dataset.price  = price;
+    let harga = parseInt(baju_picked_price.dataset.price).toLocaleString("id-ID", {
+      style: 'currency',
+      currency: 'IDR',});
+    baju_picked_price.innerHTML = harga;
+    harg1 =(baju_picked_price.dataset.price === undefined)? 0 : parseInt(baju_picked_price.dataset.price);
+    harg2 = (celana_picked_price.dataset.price === undefined)? 0 : parseInt(celana_picked_price.dataset.price);
+    harg3 =(sepatu_picked_price.dataset.price === undefined)? 0 : parseInt(sepatu_picked_price.dataset.price);
+    let total = harg1 +harg2 + harg3;
 
+    let harga_tot = total.toLocaleString("id-ID", {
+      style: 'currency',
+      currency: 'IDR',});
+    picked_total.innerHTML = '<b>Estimasi Total harga</b> <br>'+ harga_tot;
     baju_selected.value = val;
+    total_selected.value = harga_tot;
   }
 }
 function fillPantsID(id) {
   if (pants.length !== 0) {
     let temp = pants.map((e, i, a) => a[a.length - 1 - i]);
     let val = temp[id - 1]["id"];
+    let name = temp[id - 1]["nama"];
+    let price = temp[id - 1]["harga"];
+    celana_picked.innerHTML = name;
+    celana_picked_price.dataset.price  = price;
+    let harga = parseInt(celana_picked_price.dataset.price).toLocaleString("id-ID", {
+      style: 'currency',
+      currency: 'IDR',});
+    celana_picked_price.innerHTML = harga;
+    harg1 =(baju_picked_price.dataset.price === undefined)? 0 : parseInt(baju_picked_price.dataset.price);
+    harg2 = (celana_picked_price.dataset.price === undefined)? 0 : parseInt(celana_picked_price.dataset.price);
+    harg3 =(sepatu_picked_price.dataset.price === undefined)? 0 : parseInt(sepatu_picked_price.dataset.price);
+    let total = harg1 +harg2 + harg3;
 
+    let harga_tot = total.toLocaleString("id-ID", {
+      style: 'currency',
+      currency: 'IDR',});
+    picked_total.innerHTML = '<b>Estimasi Total harga</b> <br>'+ harga_tot;
     celana_selected.value = val;
+    total_selected.value = harga_tot;
+
   }
 }
 function fillShoesID(id) {
   if (shoes.length !== 0) {
     let temp = shoes.map((e, i, a) => a[a.length - 1 - i]);
     let val = temp[id - 1]["id"];
+    let name = temp[id - 1]["nama"];
+    let price = temp[id - 1]["harga"];
+    sepatu_picked.innerHTML = name;
+    sepatu_picked_price.dataset.price  = price;
 
+    let harga = parseInt(sepatu_picked_price.dataset.price).toLocaleString("id-ID", {
+      style: 'currency',
+      currency: 'IDR',});
+    sepatu_picked_price.innerHTML = harga;
+    harg1 =(baju_picked_price.dataset.price === undefined)? 0 : parseInt(baju_picked_price.dataset.price);
+    harg2 = (celana_picked_price.dataset.price === undefined)? 0 : parseInt(celana_picked_price.dataset.price);
+    harg3 =(sepatu_picked_price.dataset.price === undefined)? 0 : parseInt(sepatu_picked_price.dataset.price);
+    let total = harg1 +harg2 + harg3;
+
+    let harga_tot = total.toLocaleString("id-ID", {
+      style: 'currency',
+      currency: 'IDR',});
+    picked_total.innerHTML = '<b>Estimasi Total harga</b> <br>'+ harga_tot;
     sepatu_selected.value = val;
+    total_selected.value = harga_tot;
   }
 }

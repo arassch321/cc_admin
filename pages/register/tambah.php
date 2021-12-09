@@ -12,7 +12,14 @@ if (isset($_POST["add_record"])) {
     $password = $_POST['password'];
     $gender = $_POST['gender'];
 
-    $query = "INSERT INTO user (nama, username, password, gender) VALUES (:name,:username,:password,:gender)";
+    $sql_id = "SELECT username FROM user WHERE username='$uname'";
+	$DB->query($sql_id);
+	$DB->execute();
+	$result = $DB->rowCount();
+    if($result > 0){
+        echo "<script>alert('Username $uname sudah ada');history.back()</script>";
+    }else{
+        $query = "INSERT INTO user (nama, username, password, gender) VALUES (:name,:username,:password,:gender)";
     $DB->query($query);
     $DB->bind('name', $name);
     $DB->bind('username', $uname);
@@ -34,6 +41,7 @@ if (isset($_POST["add_record"])) {
         $_SESSION['gender_user'] = $userdata['gender'];
 
         header('Location: ' . base_url);
+    }
     }
     // $sql = "INSERT INTO regist (nama, username, password, gender,) VALUES (:name,:username,:password,:gender)";
     // $stmt = $pdo_conn->prepare($sql);

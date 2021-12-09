@@ -43,9 +43,11 @@ function addToList(button) {
       function (data) {
         id = data["id"];
         console.log(id);
+        nama = data["nama"];
         img = data["gambar"];
         link = data["link"];
-        const clothObject = composeClothObject(id, img, link);
+        harga = data["harga"];
+        const clothObject = composeClothObject(id,nama, img, link,harga);
         let sameIndex = clothes.findIndex((e) => e.id === id);
         if (sameIndex != -1) {
           clothes.splice(sameIndex, 1);
@@ -62,9 +64,11 @@ function addToList(button) {
       function (data) {
         id = data["id"];
         console.log(id);
+        nama = data["nama"];
         img = data["gambar"];
         link = data["link"];
-        const pantsObject = composePantsObject(id, img, link);
+        harga = data["harga"];
+        const pantsObject = composePantsObject(id, nama, img, link,harga);
         let sameIndex = pants.findIndex((e) => e.id === id);
         if (sameIndex != -1) {
           pants.splice(sameIndex, 1);
@@ -81,9 +85,11 @@ function addToList(button) {
       function (data) {
         id = data["id"];
         console.log(id);
+        nama = data["nama"];
         img = data["gambar"];
         link = data["link"];
-        const shoesObject = composeShoesObject(id, img, link);
+        harga = data["harga"];
+        const shoesObject = composeShoesObject(id, nama, img, link,harga);
         let sameIndex = shoes.findIndex((e) => e.id === id);
         if (sameIndex != -1) {
           shoes.splice(sameIndex, 1);
@@ -94,6 +100,15 @@ function addToList(button) {
       }
     );
   }
-
   //   emptyCheck();
 }
+function clearAllClothes() {
+  const containerTODOList = document.getElementById(LIST_TODO_ID);
+  const CompletedItems = containerTODOList.querySelectorAll(".checked");
+  if (CompletedItems) {
+    for (const item of CompletedItems) {
+      item.remove();
+    }
+  }
+}
+

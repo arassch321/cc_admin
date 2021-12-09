@@ -66,6 +66,12 @@ if (isset($_POST['but_logout'])) {
     <link rel="stylesheet" href="./assets/css/profile.css">
     <link rel="stylesheet" href="./assets/css/side-bar.css">
     <title>Profile</title>
+    <script>
+    function lettersOnly(input){
+      var regex = /[^a-z0-9]/gi;
+      input.value = input.value.replace(regex, '');
+    }
+  </script>
 </head>
 
 <body>
@@ -97,7 +103,7 @@ if (isset($_POST['but_logout'])) {
                         </span>
                     </a>
                     <div class="dropdown-child">
-                        <a href="./profile" class="btn">Profiles</a>
+                        <a href="./index.php" class="btn">Profiles</a>
                         <form method='post' action="">
                             <input class="btn logout" type="submit" value="Logout" name="but_logout">
                         </form>
@@ -113,16 +119,25 @@ if (isset($_POST['but_logout'])) {
         </nav>
     </header>
     <main>
-
+    <?php
+    $sql = "SELECT * FROM user WHERE id_user='" . $_SESSION['id_user'] . "'";
+    $DB->query($sql);
+    $DB->execute();
+    $result = $DB->resultSet();
+    ?>
         <div class="profile-container">
             <form method="POST">
-                <h3>Nama</h3>
-                <input class="input-textbox" type="text" name="nama" placeholder="Name"><br>
                 <h3>Username</h3>
-                <input class="input-textbox" type="text" name="username" placeholder="Username"><br>
+                <input class="input-textbox" style="font-size:x-large" type="text" name="username" value="<?php echo $result[0]['username']; ?>" disabled><br>
+                <h3>Nama</h3>
+                <input class="input-textbox" style="font-size:large" type="text" name="nama" onkeyup="lettersOnly(this)" value="<?php echo $result[0]['nama']; ?>" required><br>
                 <h3>Gender</h3>
-                <input type="radio" name="gender" placeholder="Gender" value="l">Laki-laki
-                <input type="radio" name="gender" placeholder="Gender" value="p">Perempuan
+                <input type="radio" name="gender" placeholder="Gender" <?php if ($result[0]['gender'] == 'l') {
+                              echo 'checked';
+                            } ?> value="l" required>Laki-laki
+                <input type="radio" name="gender" placeholder="Gender" <?php if ($result[0]['gender'] == 'p') {
+                              echo 'checked';
+                            } ?> value="p" required>Perempuan
                 <br>
                 <div class="btn-container">
                     <input class="btn-update" type="submit" name="update_record" value="Update">

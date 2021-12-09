@@ -36,17 +36,19 @@ if (isset($_POST["submit-pakaian"])) {
     <p>Link To Your Outfit</p>
     <table class="tabel">
         <tr>
-            <td><img src="./uploads/<?= $data['baju']['gambar'] ?>" class="baju"></img></td>
+            <td>
+                <img src="<?= cloudinary_url('/fashion-design/' . $data['baju']['gambar']) ?>" class="baju"></img>
+            </td>
             <td><a target="_blank" href="<?= $data['baju']['link'] ?>" class="button"><?= $data['baju']['link'] ?></a></td>
             <td><a target="_blank" href="<?= $data['baju']['link'] ?>"><img src="./dist/img/link.png" class="link"></img></a></td>
         </tr>
         <tr>
-            <td><img src="./uploads/<?= $data['celana']['gambar'] ?>" class="celana"></img></td>
+            <td><img src="<?= cloudinary_url('/fashion-design/' . $data['celana']['gambar']) ?>" class="celana"></img></td>
             <td><a target="_blank" href="<?= $data['celana']['link'] ?>" class="button"><?= $data['celana']['link'] ?></a></td>
             <td><a target="_blank" href="<?= $data['celana']['link'] ?>"><img src="./dist/img/link.png" class="link"></img></a></td>
         </tr>
         <tr>
-            <td><img src="./uploads/<?= $data['sepatu']['gambar'] ?>" class="sepatu"></img></td>
+            <td><img src="<?= cloudinary_url('/fashion-design/' . $data['sepatu']['gambar']) ?>" class="sepatu"></img></td>
             <td><a target="_blank" href="<?= $data['sepatu']['link'] ?>" class="button"><?= $data['sepatu']['link'] ?></a></td>
             <td><a target="_blank" href="<?= $data['sepatu']['link'] ?>"><img src="./dist/img/link.png" class="link"></img></a></td>
         </tr>
@@ -55,6 +57,9 @@ if (isset($_POST["submit-pakaian"])) {
             <td></td>
         </tr>
     </table>
+    <p class="total-harga">
+        <b>Estimasi Total harga</b> :<?= $_POST["total"] ?>
+    </p>
     <a class="btn-grad back-to-mix" href="./mixing">
         Back to Mixing Page
     </a>

@@ -10,6 +10,12 @@
           require_once "$root/app/views/admin/templates/header.php";
           require_once "$root/app/views/admin/templates/sidebar.php";
           require_once "$root/app/models/Baju.php";
+          require_once "$root/app/config/config.php";
+
+          require_once "$root/vendor/autoload.php";
+
+          use Cloudinary\Cloudinary;
+
 
           $baju = new Baju();
 
@@ -26,12 +32,18 @@
             $dataInput['img_name']  = $_FILES["gambar"]["tmp_name"];
             // $dataInput['gambar']  = $_POST['gambar'];
 
-            if ($baju->tambahBaju($dataInput) > 0) {
+            try {
+              if ($baju->tambahBaju($dataInput) > 0) {
+                $_SESSION['success'] = 'Berhasil menambahkan data';
+
           ?>
-             <script>
-               location.replace("./");
-             </script>
+               <script>
+                 location.replace("./");
+               </script>
          <?php
+              }
+            } catch (\Exception $error) {
+              $_SESSION['error'] = 'Gagal menambahkan data, ' . $error->getMessage();
             }
           }
           ?>
@@ -59,6 +71,17 @@
            <!-- Main content -->
            <section class="content">
 
+             <?php
+              //Message
+              if (isset($_SESSION['error'])) {
+              ?>
+               <div class="alert alert-danger" role="alert">
+                 <?= $_SESSION['error'] ?>
+               </div>
+             <?php
+                unset($_SESSION['error']);
+              }
+              ?>
              <div class="card p-4">
                <form method="POST" enctype="multipart/form-data" action="">
                  <input type="hidden" name="_token" value="LYknaDwTZe3aX6sS3RVW3aZJqDonnnExNS5rEZNv">
@@ -103,10 +126,9 @@
                    </div>
                    <div class="col-md-4">
                      <div class="p-3 py-5">
-                       <img src="./dist/img/product_img.jpg" alt="" srcset="" width="200px">
                        <div class="form-group">
                          <b>Item Photo</b><br />
-                         <input type="file" class="form-control" name="gambar" accept="image/*" required>
+                         <input type="file" class="form-control" name="gambar" accept="image/png, image/jpeg, image/webp" required>
                          <div class="text-danger">
                          </div>
                        </div>

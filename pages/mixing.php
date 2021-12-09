@@ -26,6 +26,23 @@ $data['items'] = $recomendation->getAllRecomendation();
 ?>
 <div class="container--content">
     <div class="container">
+        <section class="button-sec">
+            <div id="cloth" class="picker-btn">
+                <button class="btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+            <div id="pants" class="picker-btn">
+                <button class="btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+            <div id="shoes" class="picker-btn">
+                <button class="btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </section>
         <section class="customize">
             <h1 class="header-sec">Customize Your Outfit</h1>
 
@@ -71,14 +88,34 @@ $data['items'] = $recomendation->getAllRecomendation();
                 <button class="next-btn" id="pick_shoes"><i class="fas fa-chevron-right"></i></button>
 
             </div>
+            <div id="total" class="picker-price">
+                <p><b>Estimasi Total harga</b> <br> : 0</p>
+            </div>
+
             <form action="./link-pembelian" method="post">
                 <input type="hidden" name="baju" id="baju_selected" />
                 <input type="hidden" name="celana" id="celana_selected" />
                 <input type="hidden" name="sepatu" id="sepatu_selected" />
+                <input type="hidden" name="total" id="total_selected" />
 
                 <input id="selected_submit" class="btn-grad mix-submit" type="submit" name="submit-pakaian" value="OK" />
             </form>
         </section>
+        <section class="price-sec">
+            <div id="cloth" class="picker-price">
+                <h4></h4>
+                <p></p>
+            </div>
+            <div id="pants" class="picker-price">
+                <h4></h4>
+                <p></p>
+            </div>
+            <div id="shoes" class="picker-price">
+                <h4></h4>
+                <p></p>
+            </div>
+        </section>
+
     </div>
     </section>
     <section class="recomendation">
@@ -88,7 +125,7 @@ $data['items'] = $recomendation->getAllRecomendation();
             foreach ($data['items'] as $e) {
             ?>
                 <div style="cursor: pointer;" class="recomendation_item ">
-                    <img class="btn-add" data-id="<?= $e['id'] ?>" data-item="<?= $e['Source'] ?>" src="<?= base_url; ?>/uploads/<?= $e['gambar'] ?>" alt="">
+                    <img class="btn-add" data-id="<?= $e['id'] ?>" data-item="<?= $e['Source'] ?>" src="<?= cloudinary_url('/fashion-design/' . $e['gambar']); ?>" alt="">
                 </div>
             <?php
             }

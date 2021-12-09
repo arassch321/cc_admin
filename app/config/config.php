@@ -1,4 +1,9 @@
 <?php
+require_once dirname(__FILE__) . "/../../vendor/autoload.php";
+
+use Cloudinary\Cloudinary;
+use Cloudinary\Configuration\Configuration;
+// require_once "$root/vendor/autoload.php";
 
 function url()
 {
@@ -34,5 +39,27 @@ if (strpos($baseurl, 'herokuapp.com') === false) {
     define('DB_PASS', 'qLeQEtL1EP');
     define('DB_NAME', 'b999YkcGoV');
 }
+
+// Configuration::instance(['cloud' => ['cloud_name' => 'kadabengaran-cloud', 'api_key' => '374176865743142', 'api_secret' => '7PdAKFh_0-h-1V1klZ4sbG-ZLAY']]);
+// $config = Configuration::instance();
+// $config->cloud->cloudName = 'kadabengaran-cloud';
+// $config->cloud->apiKey = '374176865743142';
+// $config->cloud->apiSecret = '7PdAKFh_0-h-1V1klZ4sbG-ZLAY';
+// $config->url->secure = true;
+// $cloudinary = new Cloudinary(
+//     [
+//         'cloud' => [
+//             'cloud_name' => 'kadabengaran-cloud',
+//             'api_key'    => '374176865743142',
+//             'api_secret' => '7PdAKFh_0-h-1V1klZ4sbG-ZLAY',
+//         ],
+//     ]
+// );
+\Cloudinary::config([
+    "cloud_name" => "kadabengaran-cloud",
+    "api_key" => "374176865743142",
+    "api_secret" => "7PdAKFh_0-h-1V1klZ4sbG-ZLAY",
+    "secure" => true
+]);
 
 session_start();

@@ -21,6 +21,13 @@ require_once "../../app/config/config.php";
     <link rel="stylesheet" href="./assets/css/Regis.css">
     <link rel="stylesheet" href="./cssregister.css">
 
+    <script>
+    function lettersOnly(input){
+      var regex = /[^a-z0-9]/gi;
+      input.value = input.value.replace(regex, '');
+    }
+  </script>
+
     <title>Register</title>
 </head>
 
@@ -73,25 +80,25 @@ require_once "../../app/config/config.php";
                 <div class="welcome">
                     Nama Lengkap
                 </div>
-                <input type="text_name" name="name" class="form-register">
+                <input type="text_name" onkeyup="lettersOnly(this)" name="name" class="form-register" required>
                 <div class="welcome">
                     Username
                 </div>
-                <input type="text_username" name="username" class="form-register">
+                <input type="text_username" onkeyup="lettersOnly(this)" name="username" class="form-register" required>
                 <div class="welcome">
                     Password
                 </div>
-                <input type="password" name="password" class="form-register">
+                <input type="password" name="password" class="form-register" required>
                 <div class="welcome">
                     Re-Password
                 </div>
-                <input type="password" name="tambah_akun" class="form-register">
+                <input type="password" name="tambah_akun" class="form-register" required>
                 <div class="welcome">
                     Gender
                 </div>
                 <p class="tulisan">
-                    <label><input type="radio" name="gender" value="l" /> Laki-laki</label class="form-register">
-                    <label><input type="radio" name="gender" value="p" /> Perempuan</label class="form-register">
+                    <label><input type="radio" name="gender" value="l" required/> Laki-laki</label class="form-register">
+                    <label><input type="radio" name="gender" value="p" required/> Perempuan</label class="form-register">
                 </p>
                 <p><span class="sepasi">...</span></p>
                 <input type="submit" name="add_record" class="nav-signup-new btn" value="Buat Akun">

@@ -134,9 +134,9 @@ if (isset($_POST['but_logout'])) {
                                                         echo $message;
                                                     } ?></div>
             <form name="frmChange" method="post" action="" onSubmit="return validatePassword()" class="form">
-                <input class="input-form" id="currentPassword" type="password" name="currentPassword" placeholder="Password" style="height: 47px" />
-                <input class="input-form" id="newPassword" type="password" name="newPassword" placeholder="New Password" style="height: 47px" />
-                <input class="input-form" id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" style="height: 47px" />
+                <input class="input-form" id="currentPassword" type="password" name="currentPassword" placeholder="Password" style="height: 47px" required/>
+                <input class="input-form" id="newPassword" type="password" name="newPassword" placeholder="New Password" style="height: 47px" required/>
+                <input class="input-form" id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" style="height: 47px" required/>
                 <p><input type="submit" name="submit" value="Change Password" class="btn2"></input></p>
                 <p><a href="../" class="backtologin">Back to Home page</a></p>
         </div>
