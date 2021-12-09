@@ -107,8 +107,8 @@ if (isset($_POST['but_submit'])) {
             <div class="welcome">
                 Welcome to your dashboard
                 <form action="" method="post">
-                    <input type="text" id="txt_uname" name="txt_uname" class="input-form" placeholder="Username">
-                    <input type="password" id="txt_pwd" name="txt_pwd" class="input-form" placeholder="Password">
+                    <input type="text" id="txt_uname" name="txt_uname" class="input-form" placeholder="Username" required>
+                    <input type="password" id="txt_pwd" name="txt_pwd" class="input-form" placeholder="Password" required>
             </div>
 
             <table class="form-table">

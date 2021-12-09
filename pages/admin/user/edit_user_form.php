@@ -234,23 +234,23 @@ if (isset($_POST['but_logout'])) {
               </div>
               <div class="row mt-3">
                 <div class="col-md-12">
-                  <label class="labels">Nama User</label>
-                  <input type="text" class="form-control " placeholder="Masukkan Nama User Anda" value="<?php echo $result[0]['nama']; ?>" name="nama" id="nama">
+                  <label class="labels">Username</label>
+                  <input type="text" class="form-control " placeholder="Masukkan Nama Username Anda" value="<?php echo $result[0]['username']; ?>" name="username" id="username" readonly>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col-md-12">
-                  <label class="labels">Username</label>
-                  <input type="text" class="form-control " placeholder="Masukkan Nama Username Anda" value="<?php echo $result[0]['username']; ?>" name="username" id="username">
+                  <label class="labels">Nama User</label>
+                  <input type="text" class="form-control " placeholder="Masukkan Nama User Anda" value="<?php echo $result[0]['nama']; ?>" name="nama" id="nama" required>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col-md-12"><label class="labels">Password</label>
-                  <input type="password" class="form-control " placeholder="Masukkan Password Anda" value="<?php echo $result[0]['password']; ?>" name="password" id="password" maxlength="18">
+                  <input type="password" class="form-control " placeholder="Masukkan Password Anda" value="<?php echo $result[0]['password']; ?>" name="password" id="password" maxlength="18" required>
                 </div>
               </div>
               <div class="row mt-3">
-                <div class="col-md-12"><label class="labels">Gender</label><select class="form-control" id="gender" name="gender">
+                <div class="col-md-12"><label class="labels">Gender</label><select class="form-control" id="gender" name="gender" required>
                     <option value="">Masukkan Gender Anda</option>
                     <option <?php if ($result[0]['gender'] == 'l') {
                               echo 'selected';
