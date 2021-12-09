@@ -230,7 +230,7 @@ if (isset($_POST['but_logout'])) {
                 <div class="col-md-12">
                   <label class="labels">Username</label>
                   <input type="text" class="form-control " placeholder="Masukkan Nama Username Anda" onkeyup="lettersOnly(this)" value="" name="username" id="username" required>
-                  <label class="labels">Hanya bisa menggunakan angka dan huruf</label>                                                       
+                  <h1 style="font-size: 2.5rem!important;">Hanya bisa menggunakan angka dan huruf</h1>                                                   
                 </div>
               </div>
               <div class="row mt-3">
