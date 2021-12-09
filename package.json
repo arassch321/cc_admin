@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@cloudinary/url-gen": "^1.3.0",
+    "cloudinary-core": "^2.12.0"
+  },
+  "name": "fashion-design-kel3",
+  "description": "",
+  "version": "1.0.0",
+  "type":"module",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm install --prefix /pages/node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arassch321/cc_admin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arassch321/cc_admin/issues"
+  },
+  "homepage": "https://github.com/arassch321/cc_admin#readme",
+  "engines": {
+    "node": "16.x",
+    "npm": ">= 8.1.3"
+  }
+}

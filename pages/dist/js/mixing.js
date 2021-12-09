@@ -1,4 +1,6 @@
-let clothesListContainer = document.querySelector(
+ var cl = new cloudinary.Cloudinary({cloud_name: "kadabengaran-cloud", secure: true});
+
+ let clothesListContainer = document.querySelector(
   "#pick_cloth_img .images-area"
 );
 
@@ -13,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (i == 0) {
           imageCloth.classList.add("firstImage");
         }
-        imageCloth.src = base_url + "/uploads/" + e["img"];
+         const myURL =cl.url("fashion-design/"+e["img"]);
+        imageCloth.src = myURL;
         clothesListContainer.append(imageCloth);
       });
   } else {
@@ -40,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (i == 0) {
           imageCloth.classList.add("firstImage");
         }
-        imageCloth.src = base_url + "/uploads/" + e["img"];
+         const myURL =cl.url("fashion-design/"+e["img"]);
+        imageCloth.src = myURL;
         pantsListContainer.append(imageCloth);
       });
   } else {
@@ -66,7 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (i == 0) {
           imageCloth.classList.add("firstImage");
         }
-        imageCloth.src = base_url + "/uploads/" + e["img"];
+         const myURL =cl.url("fashion-design/"+e["img"]);
+        imageCloth.src = myURL;
         shoesListContainer.append(imageCloth);
       });
   } else {
