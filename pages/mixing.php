@@ -88,6 +88,10 @@ $data['items'] = $recomendation->getAllRecomendation();
                 <button class="next-btn" id="pick_shoes"><i class="fas fa-chevron-right"></i></button>
 
             </div>
+            <div id="total" class="picker-price">
+                <p><b>Estimasi Total harga</b> <br> : 0</p>
+            </div>
+
             <form action="./link-pembelian" method="post">
                 <input type="hidden" name="baju" id="baju_selected" />
                 <input type="hidden" name="celana" id="celana_selected" />
@@ -109,9 +113,6 @@ $data['items'] = $recomendation->getAllRecomendation();
             <div id="shoes" class="picker-price">
                 <h4></h4>
                 <p></p>
-            </div>
-            <div id="total" class="picker-price">
-                <p><b>Estimasi Total harga</b> : 0</p>
             </div>
         </section>
 

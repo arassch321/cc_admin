@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let baju_del = document.querySelector(".picker-btn#cloth .btn");
 
-  
+
   celana_del.addEventListener("click", deleteAllPants);
   sepatu_del.addEventListener("click", deleteAllShoes);
 
@@ -278,7 +278,7 @@ function fillClothID(id) {
     let harga_tot = total.toLocaleString("id-ID", {
       style: 'currency',
       currency: 'IDR',});
-    picked_total.innerHTML = '<b>Estimasi Total harga</b> '+ harga_tot;
+    picked_total.innerHTML = '<b>Estimasi Total harga</b> <br>'+ harga_tot;
     baju_selected.value = val;
     total_selected.value = harga_tot;
   }
@@ -303,7 +303,7 @@ function fillPantsID(id) {
     let harga_tot = total.toLocaleString("id-ID", {
       style: 'currency',
       currency: 'IDR',});
-    picked_total.innerHTML = '<b>Estimasi Total harga</b> '+ harga_tot;
+    picked_total.innerHTML = '<b>Estimasi Total harga</b> <br>'+ harga_tot;
     celana_selected.value = val;
     total_selected.value = harga_tot;
 
@@ -330,7 +330,7 @@ function fillShoesID(id) {
     let harga_tot = total.toLocaleString("id-ID", {
       style: 'currency',
       currency: 'IDR',});
-    picked_total.innerHTML = '<b>Estimasi Total harga</b> '+ harga_tot;
+    picked_total.innerHTML = '<b>Estimasi Total harga</b> <br>'+ harga_tot;
     sepatu_selected.value = val;
     total_selected.value = harga_tot;
   }
