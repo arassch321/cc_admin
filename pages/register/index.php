@@ -22,11 +22,11 @@ require_once "../../app/config/config.php";
     <link rel="stylesheet" href="./cssregister.css">
 
     <script>
-    function lettersOnly(input){
-      var regex = /[^a-z0-9]/gi;
-      input.value = input.value.replace(regex, '');
-    }
-  </script>
+        function lettersOnly(input) {
+            var regex = /[^a-z0-9]/gi;
+            input.value = input.value.replace(regex, '');
+        }
+    </script>
 
     <title>Register</title>
 </head>
@@ -74,7 +74,7 @@ require_once "../../app/config/config.php";
         <div class="login-container">
             <form action="tambah.php" method="POST">
                 <div class="hello-there">
-                    Register
+                    WOOOYYY
                 </div>
 
                 <div class="welcome">
@@ -92,13 +92,13 @@ require_once "../../app/config/config.php";
                 <div class="welcome">
                     Re-Password
                 </div>
-                <input type="password" name="tambah_akun" class="form-register" required>
+                <input type="password" name="re-password" class="form-register" required>
                 <div class="welcome">
                     Gender
                 </div>
                 <p class="tulisan">
-                    <label><input type="radio" name="gender" value="l" required/> Laki-laki</label class="form-register">
-                    <label><input type="radio" name="gender" value="p" required/> Perempuan</label class="form-register">
+                    <label><input type="radio" name="gender" value="l" required /> Laki-laki</label class="form-register">
+                    <label><input type="radio" name="gender" value="p" required /> Perempuan</label class="form-register">
                 </p>
                 <p><span class="sepasi">...</span></p>
                 <input type="submit" name="add_record" class="nav-signup-new btn" value="Buat Akun">
