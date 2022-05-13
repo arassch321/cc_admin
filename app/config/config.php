@@ -35,9 +35,9 @@ if (strpos($baseurl, 'herokuapp.com') === false) {
     define('DB_NAME', 'db_fashiondesign');
 } else {
     define('DB_HOST', 'remotemysql.com');
-    define('DB_USER', 'b999YkcGoV');
-    define('DB_PASS', 'qLeQEtL1EP');
-    define('DB_NAME', 'b999YkcGoV');
+    define('DB_USER', 'sOrtNg22tx');
+    define('DB_PASS', '6sEOvQFlnW');
+    define('DB_NAME', 'sOrtNg22tx');
 }
 
 // Configuration::instance(['cloud' => ['cloud_name' => 'kadabengaran-cloud', 'api_key' => '374176865743142', 'api_secret' => '7PdAKFh_0-h-1V1klZ4sbG-ZLAY']]);
